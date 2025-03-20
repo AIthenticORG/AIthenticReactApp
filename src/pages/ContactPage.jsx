@@ -49,7 +49,6 @@ const ContactPage = () => {
                                 <h1 className='text-black font-bold text-[16px]'>Contact</h1>
                             </div>
                         </div>
-        
                     </div>
         </div>
     );
