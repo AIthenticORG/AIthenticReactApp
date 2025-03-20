@@ -5,12 +5,11 @@ import InfoContainer from '../components/InfoContainer'
 const HomePage = () => {
     return(
         <div className="w-full h-auto flex flex-col">
-            <img src={HomePageImage} className="w-full h-[80vh] object-cover" alt="HomePageImage"> 
+            <img draggable="false" src={HomePageImage} className="w-full h-[80vh] object-cover" alt="HomePageImage"> 
             </img>  
             <ImageSlider/>
             <InfoContainer/>
         </div>
-
 
     )
 }
