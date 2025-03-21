@@ -14,48 +14,48 @@ const InfoContainer = () => {
             <div className="flex flex-wrap md:flex-column justify-evenly gap-[20px] items-center md:w-[780px] w-full h-full">
 
                 <div className="w-[320px] h-[200px] flex flex-row items-center gap-[30px] text-center hover:scale-[1.05] transition-all duration-300 ease-in-out">
-                    <img className='w-[150px] h-3/4 rounded-sm' src={fish} alt="" />
+                    <img draggable="false" className='w-[150px] h-3/4 rounded-sm' src={fish} alt="" />
                     <div className='flex flex-col text-center text-start'>
                         <h1 className='text-white font-bold text-[16px]'>Our Next Chapter</h1>
                         <p className='text-white text-[12px] mt-[5px]'>Read more &gt;</p>
                         <div className='flex flex-row items-center text-start'>
-                            <img className='rounded-full w-[30px]' src={fish} alt="" />
+                            <img draggable="false" className='rounded-full w-[30px]' src={fish} alt="" />
                             <p className='text-white text-[12px] mt-[10px] ml-[10px]'>Bora Efe<br />19-03-2025</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="w-[320px] h-[200px] flex flex-row items-center gap-[30px] text-center hover:scale-[1.05] transition-all duration-300 ease-in-out">
-                    <img className='w-[150px] h-3/4 rounded-sm' src={voorbeeld1} alt="" />
+                    <img draggable="false" className='w-[150px] h-3/4 rounded-sm' src={voorbeeld1} alt="" />
                     <div className='flex flex-col text-center text-start'>
                         <h1 className='text-white font-bold text-[16px]'>Our Next Mission</h1>
                         <p className='text-white text-[12px] mt-[5px]'>Read more &gt;</p>
                         <div className='flex flex-row items-center text-start'>
-                            <img className='rounded-full w-[30px]' src={fish} alt="" />
+                            <img draggable="false" className='rounded-full w-[30px]' src={fish} alt="" />
                             <p className='text-white text-[12px] mt-[10px] ml-[10px]'>Jayro Peters<br />19-03-2025</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="w-[320px] h-[200px] flex flex-row items-center gap-[30px] text-center hover:scale-[1.05] transition-all duration-300 ease-in-out">
-                    <img className='w-[150px] h-3/4 rounded-sm' src={voorbeeld2} alt="" />
+                    <img draggable="false" className='w-[150px] h-3/4 rounded-sm' src={voorbeeld2} alt="" />
                     <div className='flex flex-col text-center text-start'>
                         <h1 className='text-white font-bold text-[16px]'>AIthentic Vision 2025</h1>
                         <p className='text-white text-[12px] mt-[5px]'>Read more &gt;</p>
                         <div className='flex flex-row items-center text-start'>
-                            <img className='rounded-full w-[30px]' src={fish} alt="" />
+                            <img draggable="false" className='rounded-full w-[30px]' src={fish} alt="" />
                             <p className='text-white text-[12px] mt-[10px] ml-[10px]'>Frank Visser<br />19-03-2025</p>
                         </div>
                     </div>
                 </div>  
 
                 <div className="w-[320px] h-[200px] flex flex-row items-center gap-[30px] text-center hover:scale-[1.05] transition-all duration-300 ease-in-out">
-                    <img className='w-[150px] h-3/4 rounded-sm' src={voorbeeld3} alt="" />
+                    <img draggable="false" className='w-[150px] h-3/4 rounded-sm' src={voorbeeld3} alt="" />
                     <div className='flex flex-col text-center text-start'>
                         <h1 className='text-white font-bold text-[16px]'>Our Next Flibus</h1>
                         <p className='text-white text-[12px] mt-[5px]'>Read more &gt;</p>
                         <div className='flex flex-row items-center text-start'>
-                            <img className='rounded-full w-[30px]' src={fish} alt="" />
+                            <img draggable="false" className='rounded-full w-[30px]' src={fish} alt="" />
                             <p className='text-white text-[12px] mt-[10px] ml-[10px]'>Bill Clinton<br />19-03-2025</p>
                         </div>
                     </div>
