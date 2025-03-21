@@ -43,6 +43,7 @@ const ContactPage = () => {
                     <div className='flex flex-col text-start w-full'>
                         <h1 className='text-black font-bold text-[16px]'>All our additional information</h1>
                         <p className='text-black text-[14px]'>For all our additional information, please feel free to explore the following resources.</p>
+
                     </div>
                 </div>
 

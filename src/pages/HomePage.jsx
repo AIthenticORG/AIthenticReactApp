@@ -2,6 +2,7 @@ import HomePageImage from '../assets/AchtergrondPNG.jpg';
 import ImageSlider from '../components/LogoSlider/ImageSlider';
 import InfoContainer from '../components/InfoContainer'
 import StartLearningContainer from '../components/StartLearningContainer';
+import AssociatedCompanies from '../components/AssosiatedCompanies';
 
 const HomePage = () => {
     return(
@@ -11,7 +12,7 @@ const HomePage = () => {
             <StartLearningContainer/>
             <ImageSlider/>
             <InfoContainer/>
-            
+            <AssociatedCompanies/>
         </div>
 
     )
