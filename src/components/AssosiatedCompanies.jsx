@@ -23,7 +23,7 @@ const AssociatedCompanies = () => {
     };
 
     return (
-        <div className='bg-blue-100 w-full h-full p-6'>
+        <div className='bg-blue-100 w-full h-full p-6 flex items-center justify-center'>
             {currentType === 'one' && (
                 <div className='bg-white p-8 rounded-lg shadow-md flex flex-col items-center max-w-[1000px] max-h-[600px]'>
                     <h2 className='text-gray-600 text-lg'>Associated companies</h2>
