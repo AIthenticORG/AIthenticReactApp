@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-     <Header/>
+      <Header/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
