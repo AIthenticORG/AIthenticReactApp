@@ -20,7 +20,7 @@ const LoginPage = () => {
                                 required 
                             
                             />
-                        </label>
+                        </label>                
                         <label>
                             <p>
                                 Password   
