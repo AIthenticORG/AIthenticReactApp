@@ -1,6 +1,7 @@
 import HomePageImage from '../assets/AchtergrondPNG.jpg';
 import ImageSlider from '../components/LogoSlider/ImageSlider';
 import InfoContainer from '../components/InfoContainer'
+import AssociatedCompanies from '../components/AboutUsSlider';
 
 const HomePage = () => {
     return(
@@ -9,6 +10,7 @@ const HomePage = () => {
             </img>  
             <ImageSlider/>
             <InfoContainer/>
+            <AssociatedCompanies/>
         </div>
 
 
