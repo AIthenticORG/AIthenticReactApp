@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage'
 import Header from './components/Header/Header'
 import Footer from './components/Footer'
 import TopButton from './components/TopButton'
+import StartLearningContainer from './components/StartLearningContainer'
 import ContactPage from './pages/ContactPage'
 import './App.css'
 
