@@ -1,7 +1,7 @@
 import HomePageImage from '../assets/AchtergrondPNG.jpg';
 import ImageSlider from '../components/LogoSlider/ImageSlider';
 import InfoContainer from '../components/InfoContainer'
-import AssociatedCompanies from '../components/AboutUsSlider';
+import AssociatedCompanies from '../components/AssosiatedCompanies';
 
 const HomePage = () => {
     return(
