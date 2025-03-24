@@ -44,7 +44,7 @@ const Header = () => {
                         Contact
                     </button>
                 </Link>
-                <Link>
+                <Link to='/login'>
                     <button className="bg-white text-[#0D5B58] px-6 py-2 rounded-lg w-[auto] h-[40px] hover:cursor-pointer hover:bg-[#0D5B58] border-1 hover:text-white transition-all duration-300 ease-in-out">
                         Login
                     </button>
