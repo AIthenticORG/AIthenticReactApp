@@ -6,14 +6,14 @@ import { Link, Links } from 'react-router-dom';
 
 const Footer = () => {
     return (    
-        <footer className="h-[auto] w-[100%] flex flex-col bottom-0 items-center mt-[50px]">
+        <footer className="h-[auto] w-[100%] flex bg-[#1BB1AB] flex-col bottom-0 items-center mt-[50px]">
             
             <div className="w-full h-[400px] sm:h-[250px] lg:w-9/10 bg-[#0D5B58] relative rounded-t-[50px] flex flex-col items-center justify-center mt-[50px]">
 
                 <div className='block w-[70%] sm:h-[30%] mt-[10px] sm:mt-[0px] h-auto top-0 absolute 2xl:hidden text-white flex sm:flex-row flex-col justify-center items-center gap-[10px]'>
                     <h1 className='sm:w-[120px] font-bold '>Subscribe to our newsletter!</h1>
                     <input className='h-[40px] p-[5px] rounded-3xl border-[1px] border-white outline-none' placeholder='Your email..' type="email" />
-                    <button className='h-[40px] pl-[20px] pr-[20px] rounded-3xl border-[1px] border-white bg hover:cursor-pointer outline-none'>Subscribe</button>
+                    <button className='h-[40px] pl-[20px] pr-[20px] rounded-3xl border-[1px] border-white hover:cursor-pointer outline-none'>Subscribe</button>
                 </div>
                 
                 
