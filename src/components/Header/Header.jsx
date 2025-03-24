@@ -52,7 +52,8 @@ const Header = () => {
             </div>
             <div className='block w-[50px] h-[50px] lg:w-[80px] lg:h-[80px] lg:hidden flex flex-row justify-center items-center absolute right-0'>
                 <button onClick= {() => setActivateMobileMenu(!activateMobileMenu) }>
-                    {!activateMobileMenu ? <FontAwesomeIcon icon={faBars} className='text-white text-3xl'></FontAwesomeIcon> : <FontAwesomeIcon icon={faX} className='text-white text-3xl'></FontAwesomeIcon>}
+                    {!activateMobileMenu ? <FontAwesomeIcon icon={faBars} className='text-white text-3xl transition-transform duration-300 ease-in-out transform hover:rotate-45'></FontAwesomeIcon> : 
+                    <FontAwesomeIcon icon={faX} className='text-white text-3xl transition-transform duration-250 ease-in-out transform rotate-180'></FontAwesomeIcon>}
                 </button>
             </div>
              <HeaderMobileMenu activateMobileMenu={activateMobileMenu} />

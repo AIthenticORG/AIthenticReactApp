@@ -1,6 +1,7 @@
 import loginImage from '../assets/achtergrondPNG.jpg';
 import beach from '../assets/beach.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
     const [email, setEmail] = useState();
@@ -13,19 +14,18 @@ const LoginPage = () => {
                     <div className='flex flex-col w-[80vw] shadow-md p-[40px] sm:w-auto  h-auto sm:ml-[20px] lg:ml-[40px] rounded-[20px]'>
                         <h1 className='font-bold text-[42px]'>Welcome back!</h1>
                         <p className='text-[25px]'>Enter your credentials to enter your account</p>
-                        <form className='w-full gap-[30px] flex flex-col mt-[30px]'>
+                        <form className='w-full gap-[30px] flex flex-col mt-[30px]  md:mt-[80px]'>
                             <label>
                                 <p>
                                     Email address    
                                 </p> 
                                 <input
-                                    className='border-[1px] border-black py-[3px] rounded-[10px] w-full h-[35px] placeholder:pl-[7px]'
+                                    className='border-[1px] border-black pl-[10px] rounded-[10px] w-full h-[35px] placeholder:pl-[7px]'
                                     type="email"
                                     name="email"
                                     placeholder='Email address'
                                     onChange={(e) => setEmail(e.target.value)}
                                     required 
-                                
                                 />
                             </label>                
                             <label>
@@ -33,21 +33,30 @@ const LoginPage = () => {
                                     <p>
                                         Password   
                                     </p> 
-                                    <button className='text-[#0D5B58] hover:cursor-pointer'>
-                                        Forgot password?
-                                    </button>
+                                    <Link to='/forgot-password'>
+                                        <button className='text-[#0D5B58] hover:cursor-pointer'>
+                                            Forgot password?
+                                        </button>
+                                    </Link>
                                 </div>
                                 <input
-                                    className='border-[1px] border-black py-[3px] rounded-[10px] w-full h-[35px] placeholder:pl-[7px]'
+                                    className='border-[1px] border-black pl-[10px] rounded-[10px] w-full h-[35px] placeholder:pl-[7px]'
                                     type="password"
                                     name="password"
                                     placeholder='Password'
                                     onChange={(e) => setPassword(e.target.value)}
                                     required 
-                                
                                 />
                             </label>
-                            <button className='w-full h-[40px] bg-[#0D5B58] text-white rounded-[10px] hover:cursor-pointer' type='submit'
+                            <label className='flex flex-row items-start gap-x-[10px]'>
+                                <input
+                                    className='w-[20px] h-[20px] mt-[10px]'
+                                    type="checkbox"
+                                    name="rememberMe"  
+                                />
+                                <span className='text-[15px] translate-y-[40%]'>Remember me for 30 days</span> 
+                            </label>
+                            <button className='w-full h-[40px] bg-[#0D5B58] mt-[0px] sm:mt-[20px] text-white rounded-[10px] hover:cursor-pointer' type='submit'
                             onClick={(e) => {
                                 e.preventDefault();
                                 console.log
