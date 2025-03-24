@@ -26,10 +26,10 @@ const TopButton = () => {
     return (
         isVisible &&
             (
-            <button onClick={handleClick} className="fixed right-10 bottom-10 p-2 text-blue-500 hover:scale-[1.1] border-[2px] border-blue-400 rounded-full h-[45px] flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all duration-300 ease-in-out focus:ring-3 focus:ring-blue-400">  
+            <button onClick={handleClick} className="fixed right-10 bottom-10 p-2 text-blue-500 hover:scale-[1.1] border-[2px] border-blue-400 rounded-full h-[45px] flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all duration-300 ease-in-out focus:ring-3 focus:ring-blue-400 focus:bg-blue-400">  
                 <FontAwesomeIcon icon={faArrowUp} />
             </button>   
             )
     );
-    }
+}
 export default TopButton;

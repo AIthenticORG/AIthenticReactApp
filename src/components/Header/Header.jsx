@@ -38,12 +38,12 @@ const Header = () => {
             </nav>
             <div className='hidden w-[auto] h-[80px] lg:flex flex-row justify-evenly items-center gap-[50px] absolute right-0 lg:block lg:mr-10 xl:mr-20'>
                 <Link>
-                    <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-lg w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-black transition-all duration-300 ease-in-out">
+                    <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-[100px] w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out">
                         Contact
                     </button>
                 </Link>
                 <Link>
-                    <button className="bg-white text-[#0D5B58] px-6 py-2 rounded-lg w-[auto] h-[40px] hover:cursor-pointer hover:bg-[#0D5B58] border-1 hover:text-white transition-all duration-300 ease-in-out">
+                    <button className="bg-white text-[#0D5B58] px-6 py-2 rounded-[100px] w-[auto] h-[40px] hover:cursor-pointer hover:bg-[#0D5B58] border-1 hover:text-white transition-all duration-300 ease-in-out">
                         Login
                     </button>
                 </Link>
