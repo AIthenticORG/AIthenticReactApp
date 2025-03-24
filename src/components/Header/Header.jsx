@@ -13,34 +13,32 @@ const Header = () => {
         console.log("activateMobileMenu is true");
     }
 
-   
-
     return(
         <header className="bg-[#0D5B58] h-[50px] lg:h-[80px] fixed flex flex-row w-[100%] z-1000">
             <div className="h-[full] w-[auto] flex flex-row items-center gap-[16px]"> 
-                <img src={AiFinal} alt="logo" className="hover:scale-120 transition duration-400 ease-in-out w-[120px] h-[50px] ml-[16px] mb-[9px]"></img>
+                <Link to="/"><img draggable="false" src={AiFinal} alt="logo" className="hover:scale-120 transition duration-400 ease-in-out w-[120px] h-[50px] ml-[16px] mb-[9px]"></img></Link>
                 <h1 className='hidden sm:block text-white text-1xl font-bold mr-10'>
                     <em>
-                       The AI Company
+                        The AI Company
                     </em>
                 </h1>
             </div>
             <nav className="hidden lg:flex flex-row w-[auto] justify-between items-center h-[80px] lg:block">
                 <ul className="text-white flex flex-row gap-15 justify-between items-center">
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/'>About us</Link>
+                        <Link to='/aboutus'>About us</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/'>Insights</Link>
+                        <Link to='/insights'>Insights</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/'>Contact</Link>
+                        <Link to='/contact'>Contact</Link>
                     </li>
                 </ul>
             </nav>
             <div className='hidden w-[auto] h-[80px] lg:flex flex-row justify-evenly items-center gap-[50px] absolute right-0 lg:block lg:mr-10 xl:mr-20'>
                 <Link>
-                    <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-lg w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-black transition-all duration-300 ease-in-out">
+                    <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-[100px] w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out">
                         Contact
                     </button>
                 </Link>

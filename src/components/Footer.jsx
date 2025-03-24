@@ -17,12 +17,12 @@ const Footer = () => {
                 </div>
                 
                 
-                <div className="hidden 2xl:flex flex-row justify-between items-center w-1/2 h-[100px] bg-gradient-to-r items-center from-[#304B66] via-[#0D5B58] to-[#1B    B1AB] rounded-xl absolute top-[-50px] left-1/2 transform -translate-x-1/2 bg-gradient-to-l from-[#5EE6E0] to-[#113F45]">
-                    <img src={AiFinal} alt="logo" className="hidden 2xl:block w-[160px] h-[70px] ml-[30px]"></img>
+                <div className="hidden 2xl:flex flex-row justify-between items-center w-1/2 h-[100px] bg-gradient-to-r items-center from-[#304B66] via-[#0D5B58] to-[#1BB1AB] rounded-xl absolute top-[-50px] left-1/2 transform -translate-x-1/2 bg-gradient-to-l from-[#5EE6E0] to-[#113F45]">
+                    <img draggable="false" src={AiFinal} alt="logo" className="hidden 2xl:block w-[160px] h-[70px] ml-[30px]"></img>
                     <div className='flex flex-row items-center text-white mr-10 gap-[10px]'>
                         <h1 className='w-[120px] font-bold'>Subscribe to our newsletter</h1>
                         <input className='h-[40px] p-[5px] rounded-3xl border-[1px] border-white outline-none' placeholder='Your email..' type="email" />
-                        <button className='h-[40px] pl-[20px] pr-[20px] rounded-3xl border-[1px] border-white bg hover:cursor-pointer outline-none' type='submit'>Subscribe</button>
+                        <button className='h-[40px] pl-[20px] pr-[20px] rounded-3xl border-[1px] border-white bg hover:cursor-pointer outline-none hover:bg-white hover:text-[#0D5B58] transition duration-400 ease-in-out' type='submit'>Subscribe</button>
                     </div>
                 </div>
 
