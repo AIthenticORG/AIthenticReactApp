@@ -25,7 +25,7 @@ const AssociatedCompanies = () => {
     return (
         <div className='bg-blue-100 w-full h-full p-6 flex items-center justify-center'>
             {currentType === 'one' && (
-                <div className='bg-white p-8 rounded-lg shadow-md flex flex-col items-center max-w-[1000px] min-h-[500px] h-auto'>
+                <div className='bg-white p-8 rounded-lg shadow-md flex flex-col items-center max-w-[1000px] max-h-[600px]'>
                     <h2 className='text-gray-600 text-lg'>Associated companies</h2>
                     <h1 className='text-2xl font-bold mt-2'>Our current selection</h1>
                     <div className='flex mt-6 w-full'>
@@ -61,7 +61,7 @@ const AssociatedCompanies = () => {
                 </div>
             )}
             {currentType === 'two' && (
-                                <div className='bg-white p-8 rounded-lg shadow-md flex flex-col items-center max-w-[1000px] min-h-[500px] h-auto'>
+                <div className='bg-white p-8 rounded-lg shadow-md flex flex-col items-center max-w-[1000px] max-h-[600px]'>
                     <h2 className='text-gray-600 text-lg'>Associated companies</h2>
                     <h1 className='text-2xl font-bold mt-2'>Our current selection</h1>
                     <div className='flex mt-6 w-full'>
@@ -97,7 +97,7 @@ const AssociatedCompanies = () => {
                 </div>
             )}
             {currentType === 'three' && (
-                                <div className='bg-white p-8 rounded-lg shadow-md flex flex-col items-center max-w-[1000px] min-h-[500px] h-auto'>
+                <div className='bg-white p-8 rounded-lg shadow-md flex flex-col items-center max-w-[1000px] max-h-[600px]'>
                     <h2 className='text-gray-600 text-lg'>Associated companies</h2>
                     <h1 className='text-2xl font-bold mt-2'>Our current selection</h1>
                     <div className='flex mt-6 w-full'>
