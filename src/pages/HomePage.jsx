@@ -7,8 +7,8 @@ import AssociatedCompanies from '../components/AssosiatedCompanies';
 const HomePage = () => {
     return(
 
-            <div className="relative w-full h-auto flex flex-col">
-        <div className="relative w-full h-[80vh]">
+        <div className="relative w-full h-auto flex flex-col">
+            <div className="relative w-full h-[80vh]">
             <img
             src={HomePageImage}
             className="w-full h-full object-cover"
