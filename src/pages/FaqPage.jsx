@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import contact from '../assets/Contact.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 const FaqPage = () => {
-    const [expanded, setExpanded] = useState(false);
+    const faqRef = useRef(null);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const faqQuestions = [
         "How do I reset my password?",
@@ -19,6 +20,22 @@ const FaqPage = () => {
         "Are international orders supported?"
     ];
 
+    const toggleFAQ = () => {
+        const content = faqRef.current;
+        if (!content) return;
+
+        if (!isExpanded) {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            setTimeout(() => {
+                content.style.maxHeight = "200px";
+            }, 10);
+        }
+
+        setIsExpanded(!isExpanded);
+    };
+
     return (
         <div className="w-full h-auto flex flex-col items-center">
             <div className="w-[90%] xl:w-[80%] 2xl:w-[70%] h-auto mt-[50px] lg:mt-[80px] flex flex-col gap-[90px]">
@@ -28,7 +45,10 @@ const FaqPage = () => {
                             <h1 className="font-bold text-[32px] md:text-[40px]">Frequently asked questions</h1>
                         </div>
                         <p className="w-full md:w-[85%] text-[16px] md:text-[24px]">
-                            Need help? Here are some common questions asked by our users.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt iure possimus fuga tenetur sed rerum nesciunt odio quidem, assumenda dolorem deserunt optio quasi laboriosam asperiores harum, perspiciatis voluptate. Error, esse.
+                        </p>
+                        <p className="w-full md:w-[85%] text-[12px] md:text-[18px]">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt praesentium doloribus hic saepe cumque dicta quidem, facilis maiores repellendus aliquid corrupti dolor pariatur, aspernatur dolore rerum ea vero cupiditate explicabo?
                         </p>
                         <input 
                             className="border border-black p-[10px] rounded-[100px] md:w-[85%] focus:outline-none focus:ring-2 focus:ring-[#0D5B58] focus:border-[#0D5B58] transition duration-300 ease-in-out" 
@@ -41,35 +61,30 @@ const FaqPage = () => {
                     </div>
                 </div>
             </div>
-
-            {/* FAQ Section */}
             <div className="w-full bg-[#1BB1AB] mt-[50px] flex flex-col items-center pb-10">
                 <div className="w-[60%] pt-10">
                     <h1 className="text-white font-bold text-[40px]">Common questions,</h1>
                     <h2 className="text-white font-bold text-[36px]">by our users</h2>
                 </div>
-
-                {/* ✅ FAQ Container met Smooth Height Animation */}
                 <div 
-                    className="w-[60%] overflow-hidden transition-all duration-700 ease-in-out" 
-                    style={{ maxHeight: expanded ? "1000px" : "200px" }} 
+                    ref={faqRef}
+                    className="w-[60%] overflow-hidden transition-all duration-500 ease-in-out"
+                    style={{ maxHeight: "200px" }}
                 >
-                    {faqQuestions.slice(0, expanded ? faqQuestions.length : 4).map((question, index) => (
+                    {faqQuestions.map((question, index) => (
                         <div key={index} className="flex flex-row w-full items-center gap-[20px] mt-[30px]">
                             <FontAwesomeIcon icon={faMagnifyingGlass} className="text-white text-xl md:text-2xl" />
                             <p className="text-white text-[18px]">{question}</p>
                         </div>
                     ))}
                 </div>
-
-                {/* Toggle Button */}
-                <div className="relative flex flex-col justify-center items-center w-full mt-5 cursor-pointer" onClick={() => setExpanded(!expanded)}>
+                <div className="relative flex flex-col justify-center items-center w-full mt-5 cursor-pointer" onClick={toggleFAQ}>
                     <p className="text-white font-bold text-[18px]">
-                        {expanded ? "Show fewer questions" : "Click below for more questions"}
+                        {isExpanded ? "Show fewer questions" : "Click below for more questions"}
                     </p>
                     <FontAwesomeIcon 
                         icon={faArrowDown} 
-                        className={`text-white text-2xl mt-3 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} 
+                        className={`text-white text-2xl mt-3 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} 
                     />
                 </div>
             </div>
