@@ -3,10 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, fa42Group, faFacebookSquare, faSquareXTwitter } from '@fortawesome/free-brands-svg-icons';
 import AiFinal from '../assets/AiFinal.png';
 import { Link, Links } from 'react-router-dom';
+import PartnerList from './PartnerList/PartnerList';
 
 const Footer = () => {
     return (    
+        
         <footer className="h-[auto] w-[100%] flex bg-[#1BB1AB] flex-col bottom-0 items-center mt-[50px]">
+            <PartnerList />
             
             <div className="w-full h-[400px] sm:h-[250px] lg:w-9/10 bg-[#0D5B58] relative rounded-t-[50px] flex flex-col items-center justify-center mt-[50px]">
 

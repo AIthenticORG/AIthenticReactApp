@@ -72,10 +72,6 @@ const LoginPage = () => {
                     <img src={beach} className='h-[90%] w-[70%] object-cover rounded-tl-[60px] rounded-bl-[60px] relative'></img>
                 </div>
             </div>
-            <div className='w-full h-[300px] bg-[#1BB1AB] flex justify-center items-center'>
-
-            </div>
-
         </div>
     )
 }

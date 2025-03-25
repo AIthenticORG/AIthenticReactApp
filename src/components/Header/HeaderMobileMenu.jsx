@@ -6,7 +6,7 @@ const HeaderMobileMenu = ({activateMobileMenu}) => {
     return(
         <nav className={`block w-[100vw] h-[calc(100vh-50px)] lg:h-[calc(100vh-80px)] bg-[#0D5B58] flex flex-col justify-evenly fixed top-[50px] lg:top-[80px] z-50 pl-[20px] pr-[20px] border-t-[1px] border-white lg:hidden 
             transform ${activateMobileMenu ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out overflow-y-auto`}>
-            <ul className="text-white text-[18px] flex flex-col gap-[20px] justify-between width-[100%] height-auto mt-[30px]">
+            <ul className="text-white text-[18px] flex flex-col gap-[20px] justify-between width-[100%] h-auto mt-[30px]">
                 <li>
                     <Link to='/'>Home</Link>
                 </li>
