@@ -45,7 +45,10 @@ const Header = () => {
         
             <div className='w-auto h-full xl:flex flex-row justify-evenly items-center absolute right-0'>
                 <div className='w-auto h-full flex flex-row mr-[80px] xl:mr-[40px] items-center'>
-                    <button className="bg-[#0D5B58] text-white px-4 py-2 rounded-[100px] w-[auto] h-[30px] xl:h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out">
+                    <button  
+                    className="bg-[#0D5B58] text-white px-4 py-2 rounded-[100px] w-[auto] h-[30px] xl:h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out"
+                    onClick={() => setLanguage(language === 'en' ? 'nl' : 'en')}
+                    >
                         {language === 'en' ? <img draggable="false" src={ENG} alt="english" className="w-[25px] h-[15px] xl:w-[30px] xl:h-[20px]"></img> : <img draggable="false" src={NL} alt="dutch" className="w-[25px] h-[15px] xl:w-[30px] xl:h-[20px]"></img>}
                     </button>
                 </div>
