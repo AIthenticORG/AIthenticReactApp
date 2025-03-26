@@ -15,14 +15,14 @@ const HomePage = () => {
             alt="HomePageImage"
             draggable="false"
             />
-            <div className="absolute top-1/3 ml-10 md:ml-20 lg:ml-40 text-white max-w-xxl">
-                <h1 className="text-7xl font-bold">
+            <div className="absolute top-1/4 md:top-1/3 pl-10 mr-10 md:pl-20 lg:pl-40 text-white max-w-xxl">
+                <h1 className="text-[40px] md:text-[60px] font-bold">
                     <span className="text-white">Discover</span>, <span className="text-white">use AI</span>,
                 </h1>
-                <h1 className="text-6xl font-bold mt-2">
+                <h1 className="text-[40px] md:text-[60px] font-bold mt-2">
                     <span className="text-white">Understand</span> <span className="text-white">legal guidelines.</span>
                 </h1>
-                <p className="text-gray-300 mt-4">
+                <p className="text-[22px] md:text-[30px] text-gray-300 mt-4">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa laboriosam
                     voluptates sed beatae?
                 </p>
