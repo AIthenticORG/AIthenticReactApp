@@ -57,7 +57,7 @@ const FaqPage = () => {
                         />
                     </div>
                     <div className="hidden md:block w-1/2 lg:w-2/5 h-auto flex items-center mt-[60px]">
-                        <img draggable="false" src={contact} className="w-[400px] h-[300px] ml-auto" alt="Contact" />
+                        <img draggable="false" src={contact} className="select-none w-[400px] h-[300px] ml-auto" alt="Contact" />
                     </div>
                 </div>
             </div>

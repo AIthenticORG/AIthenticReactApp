@@ -11,7 +11,7 @@ const HomePage = () => {
             <div className="relative w-full h-[100vh]">
             <img
             src={HomePageImage}
-            className="w-full h-full object-cover"
+            className="select-none w-full h-full object-cover"
             alt="HomePageImage"
             draggable="false"
             />
