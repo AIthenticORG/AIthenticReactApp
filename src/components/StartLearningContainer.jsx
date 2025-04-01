@@ -25,7 +25,7 @@ const StartLearning = () => {
             </div>
             <button className='border border-[1px] border-white rounded-[40px] p-2 text-white hover:cursor-pointer hover:bg-white hover:text-black transition duration-300 ease in out'>Start Learning</button>
         </div>
-        <img className='w-1/4 hidden lg:block' src={learn} alt="" />
+        <img className='select-none w-1/4 hidden lg:block' src={learn} alt="" />
     </div>
   );
 }
