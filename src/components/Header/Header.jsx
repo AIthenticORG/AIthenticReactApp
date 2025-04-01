@@ -40,6 +40,9 @@ const Header = () => {
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/faq'>FAQ</Link>
                     </li>
+                    <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
+                        <Link to='/startlearningpage'>Start Learning</Link>
+                    </li>
                 </ul>
             </nav>
         
