@@ -6,7 +6,7 @@ const HeadImage = () => {
             <div className="relative w-full h-screen">
                 <img
                     src={HomePageImage}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover select-none"
                     alt="HomePageImage"
                     draggable="false"/>
                 <div className="absolute top-1/4 sm:top-1/3 ml-6 sm:ml-10 md:ml-20 text-white max-w-screen-lg">
