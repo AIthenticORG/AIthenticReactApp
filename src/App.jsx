@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import TopButton from './components/TopButton'
 import ContactPage from './pages/ContactPage'
 import FaqPage from './pages/FaqPage'
+import StartLearningPage from './pages/StartLearningPage'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/contact" element={<ContactPage/>}/>
         <Route path="/faq" element={<FaqPage/>}/>
+        <Route path="/startlearningpage" element={<StartLearningPage />}/>
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer/>
