@@ -2,7 +2,7 @@ import SubscriptionsSliderItems from "./SubscriptionsSliderItems";
 
 const SubscriptionsSlider = () => {
   return (
-    <div className="w-full mx-auto px-4 sm:px-6 flex flex-col items-center justify-center mt-12 lg:mt-24 mb-12 lg:mb-24">
+    <div className="w-full mx-auto flex flex-col items-center justify-center mt-12 lg:mt-24 mb-12 lg:mb-24">
       <h1 className="text-[#34949D] text-lg sm:text-xl md:text-2xl font-light text-center">
         Check out our current subscription plans
       </h1>
