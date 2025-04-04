@@ -37,7 +37,6 @@ const InfoContainer = () => {
                     </div>
                 </div>
 
-
                 <div className="lg:w-[400px] h-[auto] flex flex-col sm:flex-row justify-center items-center gap-[10px] sm:gap-[30px] mt-[20px] text-center">
                     <img draggable="false" className='select-none w-[200px] h-[200px] rounded-sm' src={fish} alt="" />
                     <div className='flex flex-col text-center text-start w-[200px]'>
