@@ -17,7 +17,7 @@ const HeaderMobileMenu = ({activateMobileMenu}) => {
                     <Link to='/'>Insights</Link>
                 </li>
                 <li>
-                    <Link to='/'>Blog</Link>
+                    <Link to='/'>Articles</Link>
                 </li>
                 <li>
                     <Link to='/'>Paulcast</Link>

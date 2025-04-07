@@ -6,6 +6,7 @@ import SubscriptionsSlider from "../components/SubscriptionsSlider/Subscriptions
 import HeadImage from "../components/HeadImage";
 
 const HomePage = () => {
+  
   return (
     <>
         <HeadImage />

@@ -4,17 +4,19 @@ import AiFinal from '../../assets/AiFinal.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars,faX } from '@fortawesome/free-solid-svg-icons';
 import HeaderMobileMenu from './HeaderMobileMenu';
+import { useTranslation } from 'react-i18next';
 import ENG from '../../assets/English_language.svg.png';
 import NL from '../../assets/Flag_of_the_Netherlands.svg.webp';
 
 const Header = () => {
-
+    const {t, i18n} = useTranslation();
+    
     const [activateMobileMenu, setActivateMobileMenu] = useState(false);
-    const [language, setLanguage] = useState('en');
 
-    if (activateMobileMenu){
-        console.log("activateMobileMenu is true");
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
     }
+
 
     return(
         <header className="bg-[#0D5B58] h-[50px] xl:h-[80px] fixed flex flex-row w-[100%] z-1000">
@@ -29,16 +31,16 @@ const Header = () => {
             <nav className="hidden xl:flex flex-row w-[auto] justify-between items-center h-[80px]">
                 <ul className="text-white flex flex-row gap-15 justify-between items-center">
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/aboutus'>About us</Link>
+                        <Link to='/aboutus'>{t('About us')}</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/insights'>Blog</Link>
+                        <Link to='/Articles'>{t('Articles')}</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/contact'>Contact</Link>
+                        <Link to='/faq'>{t('FAQ')}</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/faq'>FAQ</Link>
+                        <Link to='/podcast'>{t('Paulcast')}</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/startlearningpage'>Start Learning</Link>
@@ -50,21 +52,21 @@ const Header = () => {
                 <div className='w-auto h-full flex flex-row mr-[80px] xl:mr-[40px] items-center'>
                     <button  
                     className="bg-[#0D5B58] text-white px-4 py-2 rounded-[100px] w-[auto] h-[30px] xl:h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out"
-                    onClick={() => setLanguage(language === 'en' ? 'nl' : 'en')}
+                    onClick={() => changeLanguage(i18n.language === 'en' ? 'nl' : 'en')}
                     >
-                        {language === 'en' ? <img draggable="false" src={ENG} alt="english" className="w-[25px] h-[15px] xl:w-[30px] xl:h-[20px]"></img> : <img draggable="false" src={NL} alt="dutch" className="w-[25px] h-[15px] xl:w-[30px] xl:h-[20px]"></img>}
+                        {i18n.language === 'en' ? <img draggable="false" src={ENG} alt="english" className="w-[25px] h-[15px] xl:w-[30px] xl:h-[20px]"></img> : <img draggable="false" src={NL} alt="dutch" className="w-[25px] h-[15px] xl:w-[30px] xl:h-[20px]"></img>}
                     </button>
                 </div>
 
                 <div className='w-auto h-auto xl:flex flex-row gap-[40px] hidden xl:mr-[30px]'>
                     <Link>
                         <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-[100px] w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out">
-                            Contact
+                            {t('Contact')}
                         </button>
                     </Link>
                     <Link to='/login'>
                         <button className="bg-white text-[#0D5B58] px-6 py-2 rounded-lg w-[auto] h-[40px] hover:cursor-pointer hover:bg-[#0D5B58] border-1 hover:text-white transition-all duration-300 ease-in-out">
-                            Login
+                            {t('Login')}
                         </button>
                     </Link>
                 </div>
