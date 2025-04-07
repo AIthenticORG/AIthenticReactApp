@@ -21,7 +21,7 @@ const Header = () => {
     return(
         <header className="bg-[#0D5B58] h-[50px] xl:h-[80px] fixed flex flex-row w-[100%] z-1000">
             <div className="h-[full] w-[auto] flex flex-row items-center justify-end gap-[16px]"> 
-                <Link to="/"><img draggable="false" src={AiFinal} alt="logo" className="hover:scale-120 transition duration-400 ease-in-out w-[90px] lg:w-[120px] h-[35px] lg:h-[50px] ml-[16px] lg:mb-[9px]"></img></Link>
+                <Link to="/"><img draggable="false" src={AiFinal} alt="logo" className="select-none hover:scale-120 transition duration-400 ease-in-out w-[90px] lg:w-[120px] h-[35px] lg:h-[50px] ml-[16px] lg:mb-[9px]"></img></Link>
                 <h1 className='hidden sm:block text-white text-1xl font-bold mr-10'>
                     <em>
                         The AI Company
@@ -41,6 +41,9 @@ const Header = () => {
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/podcast'>{t('Paulcast')}</Link>
+                    </li>
+                    <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
+                        <Link to='/startlearningpage'>Start Learning</Link>
                     </li>
                 </ul>
             </nav>

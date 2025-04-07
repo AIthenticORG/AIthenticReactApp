@@ -17,7 +17,7 @@ const PartnerListItems = ({ partners, from, to }) => {
                             <p
                                 key={index}
                                 draggable="false"
-                                className="h-auto w-[200px] flex justify-center items-center text-white text-[23px] hover:scale-[1.05] transition-all duration-300 ease-in-out"
+                                className="select-none h-auto w-[200px] flex justify-center items-center text-white text-[23px] hover:scale-[1.05] transition-all duration-300 ease-in-out"
                             >
                                 {partner}
                             </p>

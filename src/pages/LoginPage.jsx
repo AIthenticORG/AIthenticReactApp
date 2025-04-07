@@ -69,7 +69,7 @@ const LoginPage = () => {
                     </div>
                 </div>
                 <div className="hidden w-1/2 h-full sm:flex flex-col sm:items-end sm:justify-center sm:block">
-                    <img src={beach} className='h-[90%] w-[70%] object-cover rounded-tl-[60px] rounded-bl-[60px] relative'></img>
+                    <img src={beach} draggable='false' className='select-none h-[90%] w-[70%] object-cover rounded-tl-[60px] rounded-bl-[60px] relative'></img>
                 </div>
             </div>
         </div>

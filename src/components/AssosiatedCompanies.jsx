@@ -41,7 +41,7 @@ const AssociatedCompanies = () => {
                 <h1 className='text-2xl font-bold mt-2'>Our current selection</h1>
                 <div className='flex flex-col sm:flex-row mt-6 w-full'>
                 <div className='w-full sm:w-1/3 flex justify-center'>
-                    <img src={bora} className='w-full h-full object-cover bg-gray-300 rounded-lg hidden sm:block md:block' />
+                    <img src={bora} draggable="false" className='w-full h-full object-cover bg-gray-300 rounded-lg hidden sm:block md:block' />
                 </div>
                 <div className='w-full sm:w-1/2 flex flex-col justify-center'>
                     <p className='text-lg font-medium italic text-gray-700 ml-[40px]'>
@@ -54,7 +54,7 @@ const AssociatedCompanies = () => {
                         <p className='text-gray-600 ml-[40px]'>@Mr_Avernues op X</p>
                     </div>
                     <div className='mx-4' style={{ height: '50px', width: '1px', backgroundColor: 'black' }}></div>
-                    <img className='h-[70px] xs:hidden' src={bora2} alt=""/>
+                    <img className='h-[70px] xs:hidden' draggable="false" src={bora2} alt=""/>
                     </div>
                 </div>
                 </div>
@@ -81,7 +81,7 @@ const AssociatedCompanies = () => {
                 <h1 className='text-2xl font-bold mt-2'>Our current selection</h1>
                 <div className='flex flex-col sm:flex-row mt-6 w-full'>
                 <div className='w-full sm:w-1/3 flex justify-center'>
-                    <img src={voorbeeld} className='w-full h-full object-cover bg-gray-300 rounded-lg hidden sm:block md:block' />
+                    <img src={voorbeeld} draggable="false" className='w-full h-full object-cover bg-gray-300 rounded-lg hidden sm:block md:block' />
                 </div>
                 <div className='w-full sm:w-1/2 flex flex-col justify-center'>
                     <p className='text-lg font-medium italic text-gray-700 ml-[40px]'>
@@ -94,7 +94,7 @@ const AssociatedCompanies = () => {
                         <p className='text-gray-600 ml-[40px]'>Manager McDonald's Nijmegen</p>
                     </div>
                     <div className='mx-4' style={{ height: '50px', width: '1px', backgroundColor: 'black' }}></div>
-                    <img className='h-[70px] hide-on-small' src={mac} alt="" />
+                    <img className='h-[70px] hide-on-small' draggable="false" src={mac} alt="" />
                     </div>
                 </div>
                 </div>
@@ -121,7 +121,7 @@ const AssociatedCompanies = () => {
                 <h1 className='text-2xl font-bold mt-2'>Our current selection</h1>
                 <div className='flex flex-col sm:flex-row mt-6 w-full'>
                 <div className='w-full sm:w-1/3 flex justify-center'>
-                    <img src={jayropeters} className='w-full h-full object-cover bg-gray-300 rounded-lg hidden sm:block md:block' />
+                    <img src={jayropeters} draggable="false" className='w-full h-full object-cover bg-gray-300 rounded-lg hidden sm:block md:block' />
                 </div>
                 <div className='w-full sm:w-1/2 flex flex-col justify-center'>
                     <p className='text-lg font-medium italic text-gray-700 ml-[40px]'>
@@ -134,7 +134,7 @@ const AssociatedCompanies = () => {
                         <p className='text-gray-600 ml-[40px]'>Rijke vader</p>
                     </div>
                     <div className='mx-4' style={{ height: '50px', width: '1px', backgroundColor: 'black' }}></div>
-                    <img className='h-[70px] hide-on-small' src={jayro} alt="" />
+                    <img className='h-[70px] hide-on-small' draggable="false" src={jayro} alt="" />
                     </div>
                 </div>
                 </div>

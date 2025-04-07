@@ -8,10 +8,11 @@ import LoginPage from './pages/LoginPage'
 import Header from './components/Header/Header'
 import Footer from './components/Footer'
 import TopButton from './components/TopButton'
-import StartLearningContainer from './components/StartLearningContainer'
 import ContactPage from './pages/ContactPage'
 import FaqPage from './pages/FaqPage'
 import ArticlePage from './pages/ArticlePage';
+import AboutUsPage from './pages/AboutUsPage'
+import StartLearningPage from './pages/StartLearningPage'
 import './App.css'
 
 function App() {
@@ -25,7 +26,9 @@ function App() {
         <Route path="/contact" element={<ContactPage/>}/>
         <Route path="/articles" element={<ArticlePage/>}/>
         <Route path="/faq" element={<FaqPage/>}/>
-        <Route path="*" element={<HomePage/>} />
+        <Route path="/aboutus" element={<AboutUsPage/>}/>
+        <Route path="/startlearningpage" element={<StartLearningPage />}/>
+        <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer/>
       <TopButton/>
