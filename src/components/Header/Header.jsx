@@ -43,7 +43,7 @@ const Header = () => {
                         <Link to='/podcast'>{t('Paulcast')}</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/startlearningpage'>Start Learning</Link>
+                        <Link to='/startlearning'>{t('Start learning')}</Link>
                     </li>
                 </ul>
             </nav>
@@ -65,7 +65,7 @@ const Header = () => {
                         </button>
                     </Link>
                     <Link to='/login'>
-                        <button className="bg-white text-[#0D5B58] px-6 py-2 rounded-lg w-[auto] h-[40px] hover:cursor-pointer hover:bg-[#0D5B58] border-1 hover:text-white transition-all duration-300 ease-in-out">
+                        <button className="bg-white text-[#0D5B58] px-6 py-2 rounded-lg w-[120px] h-[40px] hover:cursor-pointer hover:bg-[#0D5B58] border-1 hover:text-white transition-all duration-300 ease-in-out">
                             {t('Login')}
                         </button>
                     </Link>

@@ -4,8 +4,11 @@ import { faLinkedin, fa42Group, faFacebookSquare, faSquareXTwitter } from '@fort
 import AiFinal from '../assets/AiFinal.png';
 import { Link, Links } from 'react-router-dom';
 import PartnerList from './PartnerList/PartnerList';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (    
         
         <footer className="h-[auto] w-[100%] flex bg-[#1BB1AB] flex-col bottom-0 items-center mt-[50px]">
@@ -31,58 +34,72 @@ const Footer = () => {
 
                 <div className="flex flex-wrap mb-[30px] sm:mb-[0px] sm:flex-row sm:w-9/10 lg:w-[1000px] h-auto sm:h-[70%] bottom-0 absolute items-center text-white">
                     <nav className="w-1/2 sm:w-1/4 h-[80%] flex flex-col items-center sm:border-r-[1px] sm:border-white p-[5px]">
-                      <h2 className='font-bold'>Get Connected</h2>
+                      <h2 className='font-bold'>{t('Get connected')}</h2>
                       <ul className="flex flex-col items-center w-[100%] h-[100%]">
                         <li>
-                            Contact
+                            <Link to='/contact'>
+                                {t('Contact')}
+                            </Link>
                         </li>
                         <li>
-                            Support
+                            <Link to='/support'>
+                                {t('Support')}
+                            </Link>
                         </li>
                         <li>
-                            FAQ
+                            <Link to='/faq'>
+                                {t('FAQ')}
+                            </Link>
                         </li>
                       </ul>
                     </nav>
                     <nav className="w-1/2 sm:w-1/4 h-[80%] flex flex-col items-center sm:border-r-[1px] sm:border-white p-[5px]">
-                      <h2 className='font-extrabold'>Company</h2>
+                      <h2 className='font-extrabold'>{t('Company')}</h2>
                       <ul className="flex flex-col items-center w-[100%] h-[100%]">
                         <li>
-                            About Us
+                            <Link to='/aboutus'>
+                                {t('About us')}
+                            </Link>
                         </li>
                         <li>
-                            Blog
+                            <Link to='/articles'>
+                                {t('Articles')}
+                            </Link>
                         </li>
                         <li>
-                            Podcast
+                            <Link to='/podcast'>
+                                {t('Paulcast')}
+                            </Link>
                         </li>
                       </ul>
                     </nav>
                     <nav className="w-1/2 sm:w-1/4 h-[80%] flex flex-col items-center p-[5px]">
-                      <h2 className='font-extrabold'>Pricing</h2>
+                      <h2 className='font-extrabold'>{t('Plans')}</h2>
                       <ul className="flex flex-col items-center w-[100%] h-[100%] ">
-                      <li>
-                            View Plans
-                        </li>
                         <li>
-                            View Plans
-                        </li>
-                        <li>
-                            View Plans
+                            <Link to='/pricing'>
+                                {t('Our plans')}
+                            </Link>
                         </li>
                       </ul>
                     </nav>
                     <nav className="w-1/2 sm:w-1/4 h-[80%] flex flex-col items-center sm:border-l-[1px] sm:border-white p-[5px]">
-                      <h2 className='font-extrabold'>Socials</h2>
+                      <h2 className='font-extrabold'>{t('Socials')}</h2>
                       <ul className="flex flex-col items-center w-[100%] h-[100%]">
-                      <li>
-                            LinkedIn
+                        <li>
+                            <Link to="https://www.google.nl/?hl=nl" target='_blank'>
+                                 {t('LinkedIn')}
+                            </Link>
                         </li>
                         <li>
-                            X
+                            <Link to="https://x.com/ai_thentic" target='_blank'>
+                                 {t('X')}
+                            </Link>
                         </li>
                         <li>
-                            Facebook
+                            <Link to="https://www.google.nl/?hl=nl" target='_blank'>
+                                 {t('Instagram')}
+                            </Link>
                         </li>
                       </ul>    
                     </nav>
@@ -93,7 +110,7 @@ const Footer = () => {
                      <nav className="hidden sm:block text-white">
                         <ul className="flex flex-row gap-[40px] items-center">
                             <li>
-                                <Link to='https://www.youtube.com/watch?v=mkkhp4NqQk8' target='_blank'>
+                                <Link to='https://www.google.nl/?hl=nl' target='_blank'>
                                 <FontAwesomeIcon icon={faLinkedin} className="text-2xl hover:text-[#0077b5] transition duration-400 ease-in-out"/>
                                 </Link>
                             </li>
@@ -103,7 +120,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to='https://www.youtube.com/watch?v=vlYMjbwx3VM' target='_blank'>
+                                <Link to='https://www.google.nl/?hl=nl' target='_blank'>
                                 <FontAwesomeIcon icon={faFacebookSquare} className="text-2xl hover:text-[#1877F2] transition duration-400 ease-in-out"/>
                                 </Link>
                             </li>
@@ -118,7 +135,7 @@ const Footer = () => {
                                 Privacy
                             </li>
                             <li className="hover:no-underline underline hover:text-green-500 transition duration-400 ease-in-out cursor-pointer">
-                                Term
+                                Terms
                             </li>
                             <li className="hover:no-underline underline hover:text-green-500 transition duration-400 ease-in-out cursor-pointer">
                                 Cookies

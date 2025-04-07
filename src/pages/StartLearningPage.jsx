@@ -101,8 +101,8 @@ function StartLearningPage() {
         <div className="justify-center grid grid-cols-1 md:grid-cols-3 gap-12 mt-12 w-full max-w-6xl break-all md:pt-[20px]">
             {[
                 { title: "Powerful Software", description: "Lorem ipsum dolor sit amet..." },
-                { title: "Good Communication", description: "reeeeeeeeeeeeeeeeeeeaaaaaaaaaaaaaaaaaalllllllllllllllyyyyyyyyyyLLLLLLLLLLoooooooooonnnnnnnnnnnngggggggggWWWWWWWWoooooooooorrrrrrrrrddddddd" }, 
-                { title: "Ethically Responsible", description: "reeeeeeeeeeeeeeeeeeeaaaaaaaaaaaaaaaaaalllllllllllllllyyyyyyyyyyLLLLLLLLLLoooooooooonnnnnnnnnnnngggggggggWWWWWWWWoooooooooorrrrrrrrrddddddd" },
+                { title: "Good Communication", description: "Lorem tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." }, 
+                { title: "Ethically Responsible", description: "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." },
             ].map((item, index) => (
                 <div key={index} className="flex flex-col items-center text-center p-6">
                     <h2 className="font-bold text-xl mt-4"><FontAwesomeIcon className='mr-[20px]' icon={faWrench} />{item.title}</h2>
