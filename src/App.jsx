@@ -11,6 +11,7 @@ import TopButton from './components/TopButton'
 import StartLearningContainer from './components/StartLearningContainer'
 import ContactPage from './pages/ContactPage'
 import FaqPage from './pages/FaqPage'
+import ArticlePage from './pages/ArticlePage';
 import './App.css'
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/contact" element={<ContactPage/>}/>
+        <Route path="/articles" element={<ArticlePage/>}/>
         <Route path="/faq" element={<FaqPage/>}/>
-        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="*" element={<HomePage/>} />
       </Routes>
       <Footer/>
       <TopButton/>
