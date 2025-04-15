@@ -1,17 +1,22 @@
-import HomePageImage from '../assets/AchtergrondPNG.jpg';
-import ImageSlider from '../components/LogoSlider/ImageSlider';
-import InfoContainer from '../components/InfoContainer'
+import ImageSlider from "../components/LogoSlider/ImageSlider";
+import InfoContainer from "../components/InfoContainer";
+import StartLearningContainer from "../components/StartLearningContainer";
+import AssociatedCompanies from "../components/AssosiatedCompanies";
+import SubscriptionsSlider from "../components/SubscriptionsSlider/SubscriptionsSlider";
+import HeadImage from "../components/HeadImage";
 
 const HomePage = () => {
-    return(
-        <div className="w-full h-auto flex flex-col">
-            <img src={HomePageImage} className="w-full h-[80vh] object-cover" alt="HomePageImage"> 
-            </img>  
-            <ImageSlider/>
-            <InfoContainer/>
-        </div>
+  
+  return (
+    <>
+        <HeadImage />
+        <StartLearningContainer />
+        <SubscriptionsSlider />
+        <InfoContainer />
+        <ImageSlider />
+        <AssociatedCompanies />
+    </>
+  );
+};
 
-
-    )
-}
-export default HomePage;  
+export default HomePage;

@@ -12,7 +12,7 @@ const ImageSliderItems = ({images, from, to}) => {
                 className="flex flex-shrink-0">
 
             {images.map((image, index) => {
-                    return <img className="h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out" src={image} key={index} />;
+                    return <img draggable="false" className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out" src={image} key={index} />;
                     })}            
            </motion.div>
 
@@ -23,7 +23,7 @@ const ImageSliderItems = ({images, from, to}) => {
                 className="flex flex-shrink-0">
 
             {images.map((image, index) => {
-                    return <img className="h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out" src={image} key={index} />;
+                    return <img draggable="false" className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out" src={image} key={index} />;
                     })}            
            </motion.div>
 
@@ -34,7 +34,7 @@ const ImageSliderItems = ({images, from, to}) => {
                 className="flex flex-shrink-0">
 
             {images.map((image, index) => {
-                    return <img className="h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out" src={image} key={index} />;
+                    return <img draggable="false" className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out" src={image} key={index} />;
                     })}            
            </motion.div>
         </div>
