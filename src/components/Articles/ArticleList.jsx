@@ -1,8 +1,17 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const ArticleList = ({ articles, deleteArticle, setEditingArticle }) => {
+  const navigate = useNavigate();
+  const handleOpenArticle = (article) => {
+    navigate(`/article/${article.id}/${slugify(article.title)}`, {state: { article}})
+  }
+
+  function slugify(text){
+    return text.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
+  }
 
   return (
     <div className="w-full md:w-[80%] lg:w-[1200px] h-auto flex flex-col items-center justify-center py-10">
@@ -11,6 +20,7 @@ const ArticleList = ({ articles, deleteArticle, setEditingArticle }) => {
           <div
             key={article.id}
             className="w-[250px] min-h-[350px] md:w-[400px] md:h-[450px] flex flex-col bg-white shadow-lg rounded-lg overflow-hidden"
+            onClick = { () => handleOpenArticle(article)}
           >
             <li className="flex flex-col h-full">
               {/* Image Section */}

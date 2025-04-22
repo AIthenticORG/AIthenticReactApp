@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const ArticleForm = ({addArticle, updateArticle, editArticle}) => {
     const [title, setTitle] = useState('');
-    const [autor, setAutor] = useState('');
+    const [author, setAuthor] = useState('');
     const [publicated_at, setPublicatedAt] = useState('');
     const [category, setCategory] = useState('');
     const [image_url, setImage_url] = useState('');
@@ -13,7 +13,7 @@ const ArticleForm = ({addArticle, updateArticle, editArticle}) => {
     useEffect (() => {
         if(editArticle){
             setTitle(editArticle.title);
-            setAutor(editArticle.autor);
+            setAuthor(editArticle.author);
             setBody(editArticle.body);
             setCategory(editArticle.category);
             setStatus(editArticle.status);
@@ -25,7 +25,7 @@ const ArticleForm = ({addArticle, updateArticle, editArticle}) => {
         e.preventDefault();
         const article = {
             title,
-            autor,
+            author,
             publicated_at,
             category,
             image_url,
@@ -51,8 +51,8 @@ const ArticleForm = ({addArticle, updateArticle, editArticle}) => {
                 />
                 <input
                 type="text"
-                value={autor}
-                onChange={(e) => setAutor(e.target.value)}
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
                 placeholder="Auteur"
                 />
                 <input

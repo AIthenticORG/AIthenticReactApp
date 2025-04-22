@@ -34,7 +34,7 @@ const Header = () => {
                         <Link to='/aboutus'>{t('About us')}</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/Articles'>{t('Articles')}</Link>
+                        <Link to='/articles'>{t('Articles')}</Link>
                     </li>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/faq'>{t('FAQ')}</Link>
