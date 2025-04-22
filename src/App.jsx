@@ -13,6 +13,7 @@ import FaqPage from './pages/FaqPage'
 import ArticlePage from './pages/ArticlePage';
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
+import ArticleDetailPage from './pages/ArticleDetailPage'
 import './App.css'
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
         <Route path="/articles" element={<ArticlePage/>}/>
         <Route path="/faq" element={<FaqPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage/>}/>
-        <Route path="/startlearning" element={<StartLearningPage />}/>
+        <Route path="/startlearning" element={<StartLearningPage/>}/>
+        <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
       <Footer/>

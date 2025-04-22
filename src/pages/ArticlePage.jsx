@@ -3,7 +3,6 @@ import axios from 'axios';
 import ArticlesList from '../components/Articles/ArticleList';
 import ArticleForm from '../components/Articles/ArticleForm';
 
-
 const ArticlePage = () => {
     const [articles, setArticles] = useState([]);
     const [editArticle, setEditArticle] = useState(null);   
@@ -11,7 +10,8 @@ const ArticlePage = () => {
     useEffect(() =>{
         axios.get('http://localhost:3306/api/articles', {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
         }).then((response) => {
             setArticles(response.data);
