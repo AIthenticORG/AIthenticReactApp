@@ -48,8 +48,8 @@ const SubscriptionsSliderItems = ({ from, to }) => {
           {sliderItems.map((item, index) => (
             <div
               key={index}
-              className={`h-[400px] w-[300px] sm:h-[500px] sm:w-[350px] md:h-[500px] md:w-[400px] lg:h-[600px] lg:w-[450px] flex flex-col items-center justify-between text-xl font-bold hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-6 shadow-lg ${item.bgColor} ${item.textColor} ${item.border}`}>
-              <div className="mb-4 text-center text-3xl text-gray-700">
+              className={`h-[400px] w-[300px] sm:h-[500px] sm:w-[350px] md:h-[500px] md:w-[400px] lg:h-[500px] lg:w-[400px] flex flex-col items-center justify-between font-bold hover:scale-105 transition-all duration-300 ease-in-out rounded-lg p-6 shadow-lg ${item.bgColor} ${item.textColor} ${item.border}`}>
+              <div className="mb-4 text-center text-2xl text-gray-700">
                 {item.icon}
               </div>
               <h2 className="text-2xl font-bold mb-2 text-center">{item.title}</h2>
