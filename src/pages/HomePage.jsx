@@ -4,13 +4,14 @@ import StartLearningContainer from "../components/StartLearningContainer";
 import AssociatedCompanies from "../components/AssosiatedCompanies";
 import SubscriptionsSlider from "../components/SubscriptionsSlider/SubscriptionsSlider";
 import HeadImage from "../components/HeadImage";
+import OurMission from "../components/OurMission";
 
 const HomePage = () => {
   
   return (
     <>
         <HeadImage />
-        <StartLearningContainer />
+        <OurMission />
         <SubscriptionsSlider />
         <InfoContainer />
         <ImageSlider />
