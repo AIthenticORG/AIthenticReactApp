@@ -5,13 +5,14 @@ import AssociatedCompanies from "../components/AssosiatedCompanies";
 import SubscriptionsSlider from "../components/SubscriptionsSlider/SubscriptionsSlider";
 import ServicesContainer from "../components/ServicesContainer";
 import HeadImage from "../components/HeadImage";
+import OurMission from "../components/OurMission";
 
 const HomePage = () => {
   
   return (
     <>
         <HeadImage />
-        <StartLearningContainer />
+        <OurMission />
         <ServicesContainer />
         <SubscriptionsSlider />
         <InfoContainer />
