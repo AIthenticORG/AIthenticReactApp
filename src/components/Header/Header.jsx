@@ -24,7 +24,7 @@ const Header = () => {
                 <Link to="/"><img draggable="false" src={AiFinal} alt="logo" className="select-none hover:scale-120 transition duration-400 ease-in-out w-[90px] lg:w-[120px] h-[35px] lg:h-[50px] ml-[16px] lg:mb-[9px]"></img></Link>
                 <h1 className='hidden sm:block text-white text-1xl font-bold mr-10'>
                     <em>
-                        The AI Company
+                        {t('header.purpose')}
                     </em>
                 </h1>
             </div>
