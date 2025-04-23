@@ -36,6 +36,7 @@ const OurMission = () => {
             <div className="w-1/3 hidden lg:block h-full flex flex-col justify-center items-center">    
                 <img src={routeImage} alt="Route" className="object-cover" />
             </div>
+            
         </div>
     )
 }
