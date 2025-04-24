@@ -29,6 +29,9 @@ function App() {
         <Route path="/faq" element={<FaqPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/startlearning" element={<StartLearningPage/>}/>
+        <Route path="/why" element={<AboutUsPage/>}/>
+        <Route path="/what" element={<AboutUsPage/>}/>
+        <Route path="/how" element={<AboutUsPage/>}/>
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
