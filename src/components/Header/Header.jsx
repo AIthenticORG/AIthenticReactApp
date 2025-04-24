@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import AiFinal from '../../assets/AiFinal.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars,faX } from '@fortawesome/free-solid-svg-icons';
+import { faBars,faX, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import HeaderMobileMenu from './HeaderMobileMenu';
 import { useTranslation } from 'react-i18next';
 import ENG from '../../assets/English_language.svg.png';
@@ -30,9 +30,9 @@ const Header = () => {
             </div>
             <nav className="hidden xl:flex flex-row w-[auto] justify-between items-center h-[80px]">
                 <ul className="text-white flex flex-row gap-15 justify-between items-center">
-                    <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/aboutus'>{t('About us')}</Link>
-                    </li>
+                    <nav className='bg-[#08413f] shadow-lg px-[20px] py-[8px] rounded-[100px] hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out'>
+                        <Link to='/aboutus'>{t('About us')}</Link> <FontAwesomeIcon icon={faCaretDown} className='text-white text-sm ml-1'></FontAwesomeIcon>
+                    </nav>
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/articles'>{t('Articles')}</Link>
                     </li>
