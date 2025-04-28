@@ -11,6 +11,7 @@ import TopButton from './components/TopButton'
 import ContactPage from './pages/ContactPage'
 import FaqPage from './pages/FaqPage'
 import ArticlePage from './pages/ArticlePage';
+import WhatPage from './pages/WhatPage';
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
@@ -30,7 +31,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/startlearning" element={<StartLearningPage/>}/>
         <Route path="/why" element={<AboutUsPage/>}/>
-        <Route path="/what" element={<AboutUsPage/>}/>
+        <Route path="/what" element={<WhatPage/>}/>
         <Route path="/how" element={<AboutUsPage/>}/>
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
         <Route path="*" element={<h1>Not Found</h1>} />
