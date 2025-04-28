@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import AiFinal from '../../assets/AiFinal.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars,faX } from '@fortawesome/free-solid-svg-icons';
+import { faBars,faX, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import HeaderMobileMenu from './HeaderMobileMenu';
 import { useTranslation } from 'react-i18next';
 import ENG from '../../assets/English_language.svg.png';
@@ -12,11 +12,18 @@ const Header = () => {
     const {t, i18n} = useTranslation();
     
     const [activateMobileMenu, setActivateMobileMenu] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsVisible(true);
+    }
+    const handleMouseLeave = () => {
+        setIsVisible(false);
+    }
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
     }
-
 
     return(
         <header className="bg-[#0D5B58] h-[50px] xl:h-[80px] fixed flex flex-row w-[100%] z-1000">
@@ -30,9 +37,30 @@ const Header = () => {
             </div>
             <nav className="hidden xl:flex flex-row w-[auto] justify-between items-center h-[80px]">
                 <ul className="text-white flex flex-row gap-15 justify-between items-center">
-                    <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
-                        <Link to='/aboutus'>{t('About us')}</Link>
-                    </li>
+                    <nav className='bg-[#08413f] shadow-lg px-[20px] py-[8px] rounded-[100px] hover:text-green-500 transition duration-400 ease-in-out' 
+                         onMouseEnter={handleMouseEnter} 
+                         onMouseLeave={handleMouseLeave}
+                    >
+                        <Link to='/aboutus'>{t('About us')}</Link> <FontAwesomeIcon icon={faCaretDown} className='text-white text-sm ml-1'></FontAwesomeIcon>
+                    </nav>
+                    {isVisible && (
+                        <div className='absolute bg-[#08413f] shadow-lg w-[120px] mt-[165px] rounded-[10px] py-4'
+                            onMouseEnter={handleMouseEnter} 
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <ul className='flex flex-col gap-3 pl-5'>
+                                <li className="hover:scale-110 hover:text-green-500 transition duration-400 ease-in-out">  
+                                    <Link to='/why'>Waarom</Link>
+                                </li>
+                                <li className="hover:scale-110 hover:text-green-500 transition duration-400 ease-in-out">
+                                    <Link to='/what'>Wat</Link>
+                                </li>
+                                <li className="hover:scale-110 hover:text-green-500 transition duration-400 ease-in-out">
+                                    <Link to='/how'>Hoe</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    )}
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/articles'>{t('Articles')}</Link>
                     </li>

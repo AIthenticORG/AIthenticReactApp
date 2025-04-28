@@ -19,18 +19,20 @@ function App() {
   return (
     <>
       <Header/>
-        <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/login" element={<LoginPage/>} />
-          <Route path="/contact" element={<ContactPage/>} />
-          <Route path="/articles" element={<ArticlePage/>} />
-          <Route path="/faq" element={<FaqPage/>} />
-          <Route path="/aboutus" element={<AboutUsPage/>} />
-          <Route path="/startlearning" element={<StartLearningPage/>} />
-          <Route path='/why' element={<WhyPage/>} />
-          <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
-          <Route path="*" element={<h1>Not Found</h1>} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contact" element={<ContactPage/>}/>
+        <Route path="/articles" element={<ArticlePage/>}/>
+        <Route path="/faq" element={<FaqPage/>}/>
+        <Route path="/aboutus" element={<AboutUsPage/>}/>
+        <Route path="/startlearning" element={<StartLearningPage/>}/>
+        <Route path="/why" element={<AboutUsPage/>}/>
+        <Route path="/what" element={<AboutUsPage/>}/>
+        <Route path="/how" element={<AboutUsPage/>}/>
+        <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
       <Footer/>
       <TopButton/>
     </>
