@@ -1,7 +1,7 @@
 import waarom from '../assets/waarom.png';
 import waarom2 from '../assets/waarom2.png';
 
-const WaaromPage = () => {
+const WhyPage = () => {
   return (
     <div className="w-full min-h-[auto] flex flex-col items-center pt-20 md:pt-28">
         <div className="w-[90%] max-w-7xl flex flex-col gap-16">
@@ -32,4 +32,4 @@ const WaaromPage = () => {
   );
 };
 
-export default WaaromPage;
+export default WhyPage;

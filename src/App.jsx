@@ -11,7 +11,7 @@ import ArticlePage from './pages/ArticlePage';
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
-import WaaromPage from './pages/WaaromPage';
+import WhyPage from './pages/WhyPage';
 import './App.css'
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Route path="/faq" element={<FaqPage/>} />
           <Route path="/aboutus" element={<AboutUsPage/>} />
           <Route path="/startlearning" element={<StartLearningPage/>} />
-          <Route path='/why' element={<WaaromPage/>} />
+          <Route path='/why' element={<WhyPage/>} />
           <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
