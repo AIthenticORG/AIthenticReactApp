@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import '../i18n';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
@@ -14,6 +11,7 @@ import ArticlePage from './pages/ArticlePage';
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
+import WaaromPage from './pages/WaaromPage';
 import './App.css'
 
 function App() {
@@ -21,17 +19,18 @@ function App() {
   return (
     <>
       <Header/>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/contact" element={<ContactPage/>}/>
-        <Route path="/articles" element={<ArticlePage/>}/>
-        <Route path="/faq" element={<FaqPage/>}/>
-        <Route path="/aboutus" element={<AboutUsPage/>}/>
-        <Route path="/startlearning" element={<StartLearningPage/>}/>
-        <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
-        <Route path="*" element={<h1>Not Found</h1>} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/contact" element={<ContactPage/>} />
+          <Route path="/articles" element={<ArticlePage/>} />
+          <Route path="/faq" element={<FaqPage/>} />
+          <Route path="/aboutus" element={<AboutUsPage/>} />
+          <Route path="/startlearning" element={<StartLearningPage/>} />
+          <Route path='/why' element={<WaaromPage/>} />
+          <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
+          <Route path="*" element={<h1>Not Found</h1>} />
+        </Routes>
       <Footer/>
       <TopButton/>
     </>
