@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import '../i18n';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
@@ -14,6 +11,7 @@ import ArticlePage from './pages/ArticlePage';
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
+import WhyPage from './pages/WhyPage';
 import './App.css'
 
 function App() {
