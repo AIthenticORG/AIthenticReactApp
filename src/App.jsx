@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import '../i18n';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
@@ -15,6 +12,7 @@ import WhatPage from './pages/WhatPage';
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
+import WhyPage from './pages/WhyPage'
 import './App.css'
 
 function App() {
@@ -30,7 +28,7 @@ function App() {
         <Route path="/faq" element={<FaqPage/>}/>
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/startlearning" element={<StartLearningPage/>}/>
-        <Route path="/why" element={<AboutUsPage/>}/>
+        <Route path="/why" element={<WhyPage/>}/>
         <Route path="/what" element={<WhatPage/>}/>
         <Route path="/how" element={<AboutUsPage/>}/>
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
