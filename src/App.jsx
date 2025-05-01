@@ -13,6 +13,7 @@ import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
 import WhyPage from './pages/WhyPage';
 import HowPage from './pages/HowPage'
+import WhatPage from './pages/WhatPage'
 import './App.css'
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUsPage/>}/>
         <Route path="/startlearning" element={<StartLearningPage/>}/>
         <Route path="/why" element={<WhyPage/>}/>
-        <Route path="/what" element={<AboutUsPage/>}/>
+        <Route path="/what" element={<WhatPage/>}/>
         <Route path="/how" element={<HowPage/>}/>
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
         <Route path="*" element={<h1>Not Found</h1>} />
