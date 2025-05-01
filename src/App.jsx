@@ -1,4 +1,4 @@
-import '../i18n';
+import '../i18n'
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
@@ -7,12 +7,13 @@ import Footer from './components/Footer'
 import TopButton from './components/TopButton'
 import ContactPage from './pages/ContactPage'
 import FaqPage from './pages/FaqPage'
-import ArticlePage from './pages/ArticlePage';
-import WhatPage from './pages/WhatPage';
+import ArticlePage from './pages/ArticlePage'
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
-import WhyPage from './pages/WhyPage'
+import WhatPage from './pages/WhatPage';
+import WhyPage from './pages/WhyPage';
+import HowPage from './pages/HowPage'
 import './App.css'
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route path="/startlearning" element={<StartLearningPage/>}/>
         <Route path="/why" element={<WhyPage/>}/>
         <Route path="/what" element={<WhatPage/>}/>
-        <Route path="/how" element={<AboutUsPage/>}/>
+        <Route path="/how" element={<HowPage/>}/>
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
