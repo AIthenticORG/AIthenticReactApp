@@ -11,6 +11,7 @@ import ArticlePage from './pages/ArticlePage'
 import AboutUsPage from './pages/AboutUsPage'
 import StartLearningPage from './pages/StartLearningPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
+import WhatPage from './pages/WhatPage';
 import WhyPage from './pages/WhyPage';
 import HowPage from './pages/HowPage'
 import WhatPage from './pages/WhatPage'
