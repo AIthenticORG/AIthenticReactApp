@@ -1,21 +1,31 @@
-import ImageSlider from "../components/LogoSlider/ImageSlider";
-import InfoContainer from "../components/InfoContainer";
-import StartLearningContainer from "../components/StartLearningContainer";
-import AssociatedCompanies from "../components/AssosiatedCompanies";
-import SubscriptionsSlider from "../components/SubscriptionsSlider/SubscriptionsSlider";
-import ServicesContainer from "../components/ServicesContainer";
-import HeadImage from "../components/HeadImage";
-import OurMission from "../components/OurMission";
+import ImageSlider from "../components/LogoSlider/ImageSlider"; // Slider voor logo's
+import InfoContainer from "../components/InfoContainer"; // Informatiecontainer met details
+import StartLearningContainer from "../components/StartLearningContainer"; // Sectie om te beginnen met leren
+import AssociatedCompanies from "../components/AssosiatedCompanies"; // Lijst van geassocieerde bedrijven
+import SubscriptionsSlider from "../components/SubscriptionsSlider/SubscriptionsSlider"; // Slider voor abonnementen
+import ServicesContainer from "../components/ServicesContainer"; // Container voor aangeboden diensten
+import HeadImage from "../components/HeadImage"; // Afbeelding bovenaan de pagina
+import OurMission from "../components/OurMission"; // Sectie die de missie van het bedrijf beschrijft
 
 const HomePage = () => {
-  
   return (
     <>
+        {/* Hoofdafbeelding bovenaan de pagina */}
         <HeadImage />
+        
+        {/* Sectie die de missie van het bedrijf uitlegt */}
         <OurMission />
+        
+        {/* Container voor de diensten die het bedrijf aanbiedt */}
         <ServicesContainer />
+        
+        {/* Algemene informatie container */}
         <InfoContainer />
+        
+        {/* Slider voor het tonen van logo's */}
         <ImageSlider />
+        
+        {/* Lijst van geassocieerde bedrijven */}
         <AssociatedCompanies />
     </>
   );

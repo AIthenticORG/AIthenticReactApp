@@ -1,18 +1,22 @@
-import veli from '../assets/veli.jpeg';
-import bora from '../assets/bora.jpeg';
-import voorbeeld1 from '../assets/voorbeeld1.jpg';
-import fish from '../assets/fish.jpg';
-import voorbeeld2 from '../assets/voorbeeld2.avif';
-import voorbeeld3 from '../assets/voorbeeld3.jpeg';
+import veli from '../assets/veli.jpeg';  // Importeren van afbeelding voor de auteur
+import bora from '../assets/bora.jpeg';  // Importeren van afbeelding voor de auteur
+import voorbeeld1 from '../assets/voorbeeld1.jpg';  // Importeren van voorbeeldafbeelding
+import fish from '../assets/fish.jpg';  // Importeren van andere voorbeeldafbeelding
+import voorbeeld2 from '../assets/voorbeeld2.avif';  // Importeren van een ander voorbeeldafbeelding
+import voorbeeld3 from '../assets/voorbeeld3.jpeg';  // Importeren van een ander voorbeeldafbeelding
 
 const InfoContainer = () => {
     return (
         <div className="w-full h-[auto] flex flex-col text-center bg-gradient-to-l items-center from-[#304B66] via-[#0D5B58] to-[#1BB1AB] p-[30px]">
+            {/* Titel van de sectie */}
             <h1 className="w-auto h-auto text-[#8CC3C0] text-[23px] mt-[5px]">Blog</h1>
             <h1 className="w-auto h-auto text-white font-bold text-[25px] mt-[5px]">What our experts are saying</h1>
             <p className="w-full h-auto text-white text-[18px] mt-[5px]">Our Next Chapter in innovation, and combining communication</p>
+
+            {/* Container voor de blogberichten, met flex en wrap */}
             <div className="flex flex-wrap flex-col md:flex-row lg:justify-between gap-[40px] justify-center items-center w-full max-w-[1200px]">
 
+                {/* Eerste blog bericht */}
                 <div className="lg:w-[400px] h-[auto] flex flex-col sm:flex-row justify-center items-center gap-[10px] sm:gap-[30px] mt-[20px] text-center">
                     <img draggable="false" className='select-none w-[200px] h-[200px] rounded-sm' src={fish} alt="" />
                     <div className='flex flex-col text-center text-start w-[200px]'>
@@ -25,6 +29,7 @@ const InfoContainer = () => {
                     </div>
                 </div>
 
+                {/* Tweede blog bericht */}
                 <div className="lg:w-[400px] h-[auto] flex flex-col sm:flex-row justify-center items-center gap-[10px] sm:gap-[30px] mt-[20px] text-center">
                     <img draggable="false" className='select-none w-[200px] h-[200px] rounded-sm' src={voorbeeld1} alt="" />
                     <div className='flex flex-col text-center text-start w-[200px]'>
@@ -37,6 +42,7 @@ const InfoContainer = () => {
                     </div>
                 </div>
 
+                {/* Derde blog bericht */}
                 <div className="lg:w-[400px] h-[auto] flex flex-col sm:flex-row justify-center items-center gap-[10px] sm:gap-[30px] mt-[20px] text-center">
                     <img draggable="false" className='select-none w-[200px] h-[200px] rounded-sm' src={fish} alt="" />
                     <div className='flex flex-col text-center text-start w-[200px]'>
@@ -49,6 +55,7 @@ const InfoContainer = () => {
                     </div>
                 </div>
 
+                {/* Vierde blog bericht */}
                 <div className="lg:w-[400px] h-[auto] flex flex-col sm:flex-row justify-center items-center gap-[10px] sm:gap-[30px] mt-[20px] text-center">
                     <img draggable="false" className='select-none w-[200px] h-[200px] rounded-sm' src={voorbeeld1} alt="" />
                     <div className='flex flex-col text-center text-start w-[200px]'>

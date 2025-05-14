@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faE } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faE } from '@fortawesome/free-solid-svg-icons'; // Iconen voor telefoon en e-mail
 
+// Mobiele navigatiemenu component
 const HeaderMobileMenu = ({activateMobileMenu}) => {
     return(
+        // Navigatiemenu dat inschuift van rechts op mobiel
         <nav className={`block w-[100vw] h-[calc(100vh-50px)] xl:h-[calc(100vh-80px)] bg-[#0D5B58] flex flex-col justify-evenly fixed top-[50px] xl:top-[80px] z-50 pl-[20px] pr-[20px] border-t-[1px] border-white xl:hidden 
             transform ${activateMobileMenu ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500 ease-in-out overflow-y-auto`}>
+            
+            {/* Navigatielinks */}
             <ul className="text-white text-[18px] flex flex-col gap-[20px] justify-between width-[100%] h-auto mt-[30px]">
                 <li>
                     <Link to='/'>Home</Link>
@@ -23,12 +27,27 @@ const HeaderMobileMenu = ({activateMobileMenu}) => {
                     <Link to='/'>Paulcast</Link>
                 </li>
             </ul>
+
+            {/* Lijn als visuele scheiding */}
             <div className='w-[100%] h-[1px] bg-white mt-[20px]'></div>
+
+            {/* Contactgegevens en knoppen */}
             <div className='w-[100%] h-[400px] flex flex-col'>
                 <div className='w-[100%] h-full flex flex-col justify-evenly'>
-                    <p className='text-white flex flex-row items-center gap-x-[20px] text-[16px]'><FontAwesomeIcon icon={faPhone} className="text-white text-[20px]"/>0503-3004</p>
-                    <p className='text-white flex flex-row items-center gap-x-[20px] text-[16px]'><FontAwesomeIcon icon={faEnvelope} className="text-white text-[20px]"/>bora.e@icloud.com</p>
+                    {/* Telefoonnummer */}
+                    <p className='text-white flex flex-row items-center gap-x-[20px] text-[16px]'>
+                        <FontAwesomeIcon icon={faPhone} className="text-white text-[20px]"/>
+                        0503-3004
+                    </p>
+
+                    {/* E-mailadres */}
+                    <p className='text-white flex flex-row items-center gap-x-[20px] text-[16px]'>
+                        <FontAwesomeIcon icon={faEnvelope} className="text-white text-[20px]"/>
+                        bora.e@icloud.com
+                    </p>
                 </div>
+
+                {/* Contact en Login knoppen */}
                 <div className="w-[100%] h-full flex flex-col justify-evenly">
                     <Link>
                         <button className="bg-[#0D5B58] text-white py-2 rounded-lg w-full h-[45px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-black transition-all duration-300 ease-in-out">
@@ -45,4 +64,5 @@ const HeaderMobileMenu = ({activateMobileMenu}) => {
         </nav>
     )
 }
+
 export default HeaderMobileMenu;
