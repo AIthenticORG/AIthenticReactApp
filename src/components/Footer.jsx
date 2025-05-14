@@ -148,7 +148,9 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li className="hover:no-underline underline hover:text-green-500 transition duration-400 ease-in-out cursor-pointer">
-                                Cookies
+                            <Link to='/cookies'>
+                                    {t('Cookies')}
+                                </Link>
                             </li>
                         </ul>
                     </nav>

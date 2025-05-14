@@ -25,6 +25,7 @@ import TopButton from './components/TopButton';
 
 // Importeren van de algemene styling
 import './App.css';
+import CookiesPage from './pages/CookiesPage';
 
 function App() {
   return (
@@ -66,6 +67,9 @@ function App() {
 
         {/* Route voor de Terms-pagina */}
         <Route path="/terms" element={<TermsPage/>}/>
+
+        {/* Route voor de Cookies-pagina */}
+        <Route path="/cookies" element={<CookiesPage/>}/>
         
         {/* Dynamische route voor artikelpagina's met ID en titel als parameters */}
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
