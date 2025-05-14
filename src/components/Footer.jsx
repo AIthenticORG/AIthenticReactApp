@@ -143,7 +143,9 @@ const Footer = () => {
                                 Privacy
                             </li>
                             <li className="hover:no-underline underline hover:text-green-500 transition duration-400 ease-in-out cursor-pointer">
-                                Terms
+                            <Link to='/terms'>
+                                    {t('Terms')}
+                                </Link>
                             </li>
                             <li className="hover:no-underline underline hover:text-green-500 transition duration-400 ease-in-out cursor-pointer">
                                 Cookies

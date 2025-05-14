@@ -16,6 +16,7 @@ import ArticleDetailPage from './pages/ArticleDetailPage';
 import WhyPage from './pages/WhyPage';
 import HowPage from './pages/HowPage';
 import WhatPage from './pages/WhatPage';
+import TermsPage from './pages/TermsPage';
 
 // Importeren van componenten die de header, footer en top-knop beheren
 import Header from './components/Header/Header';
@@ -62,6 +63,9 @@ function App() {
         
         {/* Route voor de Hoe-pagina */}
         <Route path="/how" element={<HowPage/>}/>
+
+        {/* Route voor de Terms-pagina */}
+        <Route path="/terms" element={<TermsPage/>}/>
         
         {/* Dynamische route voor artikelpagina's met ID en titel als parameters */}
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
