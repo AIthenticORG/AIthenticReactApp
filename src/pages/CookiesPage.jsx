@@ -41,20 +41,20 @@ const CookiesPage = () => {
                             {/* De tekstsectie aan de linkerzijde van de afbeelding */}
                             <p className="text-sm md:text-base leading-relaxed">
                                 <ul>
-                                <li className="text-4xl font-bold">1. Privacy Policy</li>
-                                    <li className="mt-[3%]"><li className="text-xl font-bold">1.1 Information We Collect</li> We may collect personal information such as your name, email address, phone number, and any other information you voluntarily provide when using our services or contacting us. Additionally, we may collect non-personal information such as your IP address, browser type, device information, and usage data to improve our services and provide a better user experience.</li>
-                                    <li className="mt-[3%]"><li className="text-xl font-bold">1.2 How We Use Your Information</li> The information we collect is used to:
-                                        <li>- Provide and improve our services</li>
-                                        <li>- Respond to inquiries or support requests</li>
-                                        <li>- Send you updates, promotions, and important notifications (if you have opted in)</li>
-                                        <li>- Customize your user experience</li>
-                                        <li>- Analyze website usage and enhance functionality</li>
+                                <li className="text-4xl font-bold">Cookie Policy</li>
+                                    <li className="mt-[3%]">We use cookies on our website to enhance your browsing experience and provide you with personalized services. Cookies are small text files that are stored on your device when you visit our site. By continuing to use our website, you consent to our use of cookies in accordance with this policy.</li>
+                                    <li className="mt-[3%]"><li className="text-xl font-bold">What are cookies?</li> Cookies are small data files that are placed on your device when you visit a website. They help websites remember your actions and preferences, such as login details, language preferences, and display settings. This makes your next visit easier and more personalized.
+                                    
+                                        <li>Types of cookies we use</li>
+                                        <li className='mt-[1%]'><li className="text-l font-bold">Essential Cookies:</li> These cookies are necessary for the website to function properly. They allow you to navigate the site, use its features, and access secure areas. Without these cookies, some services may not be available.</li>
+                                        <li className='mt-[1%]'><li className="text-l font-bold">Performance Cookies:</li> These cookies collect anonymous information about how visitors use our site, such as which pages are visited most often. This helps us improve the performance and user experience on our website.</li>
+                                        <li className='mt-[1%]'><li className="text-l font-bold">Functional Cookies:</li> These cookies allow the website to remember your preferences, such as language settings or region, and provide enhanced features tailored to your needs.</li>
+                                        <li className='mt-[1%]'><li className="text-l font-bold">Targeting/Advertising Cookies:</li> These cookies track your browsing habits and may be used to deliver personalized ads relevant to you. They help measure the effectiveness of advertising campaigns.</li>
                                     </li>
-                                    <li className="mt-[3%]"><li className="text-xl font-bold">1.3 Sharing Your Information</li>We respect your privacy and will not sell, rent, or trade your personal information. We may share your information with trusted third-party service providers who assist us in running our business, such as hosting, analytics, and payment processing, but only to the extent necessary to fulfill our services. We will ensure these parties are committed to maintaining your privacy.</li>
-                                    <li className="mt-[3%]"><li className="text-xl font-bold">1.4 Data Security</li> We take reasonable steps to protect your personal information using industry-standard security measures, including encryption and secure data storage. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</li>
-                                    <li className="mt-[3%]"><li className="text-xl font-bold">1.5 Cookies and Tracking Technologies</li> Our website uses cookies and similar tracking technologies to enhance user experience, analyze website usage, and deliver targeted content. You can adjust your browser settings to block or delete cookies, but some features of the website may not function properly without them.</li>
-                                    <li className="mt-[3%]"><li className="text-xl font-bold">1.6 Your Rights</li> You have the right to access, update, or delete your personal information. If you wish to exercise any of these rights, please contact us directly. You may also opt out of marketing communications at any time by following the unsubscribe instructions included in our emails.</li>
-                                    <li className="mt-[3%]"><li className="text-xl font-bold">1.7 Changes to the Privacy Policy</li>We reserve the right to update or modify this Privacy Policy at any time. Any changes will be reflected on this page with an updated "Last Revised" date. We encourage you to review this policy periodically.</li>
+                                    <li className="mt-[3%]">Managing Cookies</li>
+                                    <li className="mt-[3%]">You can control and manage cookies through your browser settings. Most browsers allow you to block or delete cookies, but please note that disabling cookies may affect your ability to use certain features of our website.</li>
+                                    <li className="mt-[3%]">For more information about cookies, including how to manage or delete them, visit<li className='underline'> www.aboutcookies.org.</li></li>
+                                    <li className="mt-[3%]">By using our website, you agree to our use of cookies as described in this policy.</li>
                                 </ul>
                             </p>
                         </div>
