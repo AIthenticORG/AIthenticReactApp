@@ -1,35 +1,54 @@
 import React, { useEffect, useState } from 'react';
 
-const API_BASE = 'http://localhost:3306/api/survey'; // Pas aan naar juiste poort en base url
-
 const EnquetePage = () => {
   const [sections, setSections] = useState([]);
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
-  const [answers, setAnswers] = useState({}); // bewaar antwoorden van alle secties samen
+  const [answers, setAnswers] = useState({});
   const [loading, setLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [submissionId, setSubmissionId] = useState(null);
 
-  // Laad secties bij eerste render
+  // Start nieuwe submission
+  const startSubmission = async () => {
+    if (submissionId) return submissionId;
+
+    const res = await fetch('http://localhost:3306/api/survey/start', {
+      method: 'POST',
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      console.error('Fout bij starten van submission:', res.status, text);
+      throw new Error('Kan submission niet starten');
+    }
+
+    const data = await res.json();
+    if (data.submission_id) {
+      setSubmissionId(data.submission_id);
+      return data.submission_id;
+    } else {
+      throw new Error('Ongeldige response van backend');
+    }
+  };
+
   useEffect(() => {
-    fetch(`${API_BASE}/sections`)
+    fetch('http://localhost:3306/api/survey/sections')
       .then(res => res.json())
       .then(setSections)
       .catch(console.error);
   }, []);
 
-  // Laad vragen zodra secties geladen zijn en sectie verandert
   useEffect(() => {
     if (!sections.length) return;
 
-    const sectionId = sections[currentSectionIndex]?.id;
-    if (!sectionId) return;
-
     setLoading(true);
-    fetch(`${API_BASE}/questions/${sectionId}`)
+    const sectionId = sections[currentSectionIndex].id;
+    fetch(`http://localhost:3306/api/survey/questions/${sectionId}`)
       .then(res => res.json())
       .then(data => {
         setQuestions(data);
+        setAnswers({});
         setLoading(false);
       })
       .catch(err => {
@@ -38,26 +57,12 @@ const EnquetePage = () => {
       });
   }, [currentSectionIndex, sections]);
 
-  // Handle antwoord veranderen, bewaar alle antwoorden in 1 object
-  const handleAnswerChange = (questionId, answerId) => {
-    setAnswers(prev => ({ ...prev, [questionId]: answerId }));
+  const handleAnswerChange = (questionId, answer) => {
+    setAnswers(prev => ({ ...prev, [questionId]: answer }));
   };
 
-  // Handle open tekst voor sectie 6 (vraag 53)
-  const handleTextChange = (questionId, text) => {
-    setAnswers(prev => ({ ...prev, [questionId]: text }));
-  };
-
-  const handleNext = () => {
-    // Check of alle vragen in huidige sectie beantwoord zijn
-    const unanswered = questions.some(q => {
-      // Als het een open tekstvraag is (bijv. vraag 53), check op niet lege string
-      if (q.type === 'open') {
-        return !answers[q.id] || answers[q.id].trim() === '';
-      }
-      return !answers[q.id];
-    });
-    if (unanswered) {
+  const handleNext = async () => {
+    if (questions.some(q => !answers[q.id])) {
       alert('Vul alle vragen in voordat je verder gaat');
       return;
     }
@@ -66,30 +71,48 @@ const EnquetePage = () => {
       setCurrentSectionIndex(i => i + 1);
       setSubmitStatus(null);
     } else {
-      // Verzenden van alle antwoorden
-      // Maak payload: vraag id + antwoord id of tekst
-      const payload = Object.entries(answers).map(([question_id, answer]) => ({
-        question_id: Number(question_id),
-        answer: answer,
-      }));
+      try {
+        const id = await startSubmission();
 
-      fetch(`${API_BASE}/submit`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ answers: payload }),
-      })
-        .then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            setSubmitStatus('Bedankt voor het invullen!');
-            setCurrentSectionIndex(0);
-            setQuestions([]);
-            setAnswers({});
-          } else {
-            setSubmitStatus('Er is iets misgegaan.');
-          }
-        })
-        .catch(() => setSubmitStatus('Er is iets misgegaan.'));
+        const payload = {
+          submission_id: id,
+          answers: questions.map(q => {
+            const answer = answers[q.id];
+            if (typeof answer === 'string' && !isNaN(answer)) {
+              return { question_id: q.id, answer_id: Number(answer) };
+            } else if (typeof answer === 'string') {
+              return { question_id: q.id, open_text: answer };
+            } else {
+              return { question_id: q.id, answer_id: answer };
+            }
+          }),
+        };
+
+        const res = await fetch('http://localhost:3306/api/survey/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(text);
+        }
+
+        const data = await res.json();
+        if (data.success) {
+          setSubmitStatus('Bedankt voor het invullen!');
+          setCurrentSectionIndex(0);
+          setQuestions([]);
+          setAnswers({});
+          setSubmissionId(null);
+        } else {
+          setSubmitStatus('Er is iets misgegaan.');
+        }
+      } catch (err) {
+        console.error(err);
+        setSubmitStatus('Er is iets misgegaan.');
+      }
     }
   };
 
@@ -111,17 +134,9 @@ const EnquetePage = () => {
           {questions.map(q => (
             <div key={q.id} className="flex flex-col gap-3">
               <p className="font-semibold">{q.text}</p>
-
-              {q.type === 'open' ? (
-                <textarea
-                  value={answers[q.id] || ''}
-                  onChange={e => handleTextChange(q.id, e.target.value)}
-                  className="border p-2 rounded resize-y"
-                  rows={4}
-                />
-              ) : (
-                <div className="flex flex-col gap-2">
-                  {q.answers.map(a => (
+              <div className="flex flex-col gap-2">
+                {q.answers?.length ? (
+                  q.answers.map(a => (
                     <label key={a.id} className="cursor-pointer flex items-center gap-2">
                       <input
                         type="radio"
@@ -133,9 +148,17 @@ const EnquetePage = () => {
                       />
                       <span>{a.text}</span>
                     </label>
-                  ))}
-                </div>
-              )}
+                  ))
+                ) : (
+                  <textarea
+                    value={answers[q.id] || ''}
+                    onChange={e => handleAnswerChange(q.id, e.target.value)}
+                    className="border border-gray-300 rounded p-2"
+                    rows={3}
+                    placeholder="Typ je antwoord hier..."
+                  />
+                )}
+              </div>
             </div>
           ))}
 
