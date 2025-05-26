@@ -36,7 +36,7 @@ const Header = () => {
                 <Link to="/">
                     <img draggable="false" src={AiFinal} alt="logo" className="select-none hover:scale-120 transition duration-400 ease-in-out w-[90px] lg:w-[120px] h-[35px] lg:h-[50px] ml-[16px] lg:mb-[9px]" />
                 </Link>
-                <h1 className='hidden sm:block text-white text-1xl font-bold mr-10'>
+                <h1 className='hidden sm:block text-white text-1xl font-bold w-[150px]'>
                     <em>{t('header.purpose')}</em>
                 </h1>
             </div>

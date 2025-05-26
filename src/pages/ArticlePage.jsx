@@ -10,7 +10,7 @@ const ArticlePage = () => {
 
     // Gebruik useEffect om de artikelen op te halen bij het laden van de pagina
     useEffect(() =>{
-        axios.get('http://localhost:3306/api/articles', {
+        axios.get('http://localhost:3000/api/articles', {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -22,7 +22,7 @@ const ArticlePage = () => {
 
     // Functie om een nieuw artikel toe te voegen
     const addArticle = (article) => {
-        axios.post('http://localhost:3306/api/articles', article).then((response) => {
+        axios.post('http://localhost:3000/api/articles', article).then((response) => {
             setArticles([...articles, { ...article, id: response.data.id }]); // Artikel toevoegen aan de lijst met artikelen
         })
         .catch(error => console.error(error)); // Fouten loggen
@@ -30,7 +30,7 @@ const ArticlePage = () => {
 
     // Functie om een bestaand artikel bij te werken
     const updateArticle = (id, article) => {
-        axios.put(`http://localhost:3306/api/articles/${id}`, article).then((response) => {
+        axios.put(`http://localhost:3000/api/articles/${id}`, article).then((response) => {
             setArticles(articles.map(a => (a.id === id ? article : a))); // Update het artikel in de lijst
             setEditArticle(null); // Reset de bewerk-modus
         })
@@ -39,7 +39,7 @@ const ArticlePage = () => {
     
     // Functie om een artikel te verwijderen
     const deleteArticle = (id) => {
-        axios.delete(`http://localhost:3306/api/articles/${id}`).then((response) => {
+        axios.delete(`http://localhost:3000/api/articles/${id}`).then((response) => {
             setArticles(articles.filter(a => a.id !== id)); // Verwijder het artikel uit de lijst
         })
         .catch(error => console.error(error)) // Fouten loggen
