@@ -1,75 +1,133 @@
-import loginImage from '../assets/achtergrondPNG.jpg';
+
 import beach from '../assets/beach.png';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const LoginPage = () => {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [isRegistering, setIsRegistering] = useState(false);
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const role = 0; // vaste rol
 
-    return(
-        <div className="w-[100%] h-auto top-[50px] lg:top-[80px] relative flex flex-col items-center justify-center">
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            if (isRegistering) {
+                const res = await axios.post('http://localhost:3000/api/auth/register', {
+                    username,
+                    email,
+                    password,
+                    role
+                });
+                alert('Registratie gelukt!');
+                setIsRegistering(false);
+            } else {
+                const res = await axios.post('http://localhost:3000/api/auth/login', {
+                    username,
+                    password
+                });
+                alert('Login gelukt!');
+                console.log('Token:', res.data.token);
+            }
+        } catch (err) {
+            alert('Fout: ' + (err.response?.data?.error || err.message));
+        }
+    };
+
+    return (
+        <div className="w-full h-auto top-[50px] lg:top-[80px] relative flex flex-col items-center justify-center">
             <div className="w-full h-[600px] lg:h-[800px] flex flex-row">
                 <div className="w-full sm:w-1/2 h-full flex flex-col justify-center items-center lg:pb-[100px]">
-                    <div className='flex flex-col w-[80vw] shadow-md p-[40px] sm:w-auto  h-auto sm:ml-[20px] lg:ml-[40px] rounded-[20px]'>
-                        <h1 className='font-bold text-[42px]'>Welcome back!</h1>
-                        <p className='text-[25px]'>Enter your credentials to enter your account</p>
-                        <form className='w-full gap-[30px] flex flex-col mt-[30px]  md:mt-[80px]'>
+
+                    <div className='flex flex-col w-[80vw] shadow-md p-[40px] sm:w-auto h-auto sm:ml-[20px] lg:ml-[40px] rounded-[20px]'>
+                        <h1 className='font-bold text-[42px]'>
+                            {isRegistering ? 'Create an account' : 'Welcome back!'}
+                        </h1>
+                        <p className='text-[25px]'>
+                            {isRegistering ? 'Fill in your details to register' : 'Enter your credentials to log in'}
+                        </p>
+
+                        <form className='w-full gap-[30px] flex flex-col mt-[30px]' onSubmit={handleSubmit}>
+                            {isRegistering && (
+                                <>
+                                    <label>
+                                        <p>Username</p>
+                                        <input
+                                            className='border border-black pl-2 rounded w-full h-[35px]'
+                                            type="text"
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
+                                            required
+                                        />
+                                    </label>
+                                    <label>
+                                        <p>Email address</p>
+                                        <input
+                                            className='border border-black pl-2 rounded w-full h-[35px]'
+                                            type="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            required
+                                        />
+                                    </label>
+                                </>
+                            )}
+
+                            {!isRegistering && (
+                                <label>
+                                    <p>Username</p>
+                                    <input
+                                        className='border border-black pl-2 rounded w-full h-[35px]'
+                                        type="text"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                        required
+                                    />
+                                </label>
+                            )}
+
+
                             <label>
-                                <p>
-                                    Email address    
-                                </p> 
+                                <p>Password</p>
                                 <input
-                                    className='border-[1px] border-black pl-[10px] rounded-[10px] w-full h-[35px] placeholder:pl-[7px]'
-                                    type="email"
-                                    name="email"
-                                    placeholder='Email address'
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required 
-                                />
-                            </label>                
-                            <label>
-                                <div className='flex justify-between flex-row'>
-                                    <p>
-                                        Password   
-                                    </p> 
-                                    <Link to='/forgot-password'>
-                                        <button className='text-[#0D5B58] hover:cursor-pointer'>
-                                            Forgot password?
-                                        </button>
-                                    </Link>
-                                </div>
-                                <input
-                                    className='border-[1px] border-black pl-[10px] rounded-[10px] w-full h-[35px] placeholder:pl-[7px]'
+
+                                    className='border border-black pl-2 rounded w-full h-[35px]'
                                     type="password"
-                                    name="password"
-                                    placeholder='Password'
+                                    value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    required 
+                                    required
                                 />
                             </label>
-                            <label className='flex flex-row items-start gap-x-[10px]'>
-                                <input
-                                    className='w-[20px] h-[20px] mt-[10px]'
-                                    type="checkbox"
-                                    name="rememberMe"  
-                                />
-                                <span className='text-[15px] translate-y-[40%]'>Remember me for 30 days</span> 
-                            </label>
-                            <button className='w-full h-[40px] bg-[#0D5B58] mt-[0px] sm:mt-[20px] text-white rounded-[10px] hover:cursor-pointer' type='submit'
-                            onClick={(e) => {
-                                e.preventDefault();
-                                console.log
-                                (`Email: ${email} Password: ${password}`);
-                            }}
-                            > 
-                                Login
+
+                            <button
+                                type="submit"
+                                className='w-full h-[40px] bg-[#0D5B58] text-white rounded hover:cursor-pointer'
+                            >
+                                {isRegistering ? 'Register' : 'Login'}
+
                             </button>
+
+                            <p className='text-center mt-4'>
+                                {isRegistering ? 'Already have an account?' : "Don't have an account?"}{' '}
+                                <button
+                                    type="button"
+                                    className='text-[#0D5B58] underline'
+                                    onClick={() => setIsRegistering(!isRegistering)}
+                                >
+                                    {isRegistering ? 'Login here' : 'Register here'}
+                                </button>
+                            </p>
                         </form>
                     </div>
                 </div>
-                <div className="hidden w-1/2 h-full sm:flex flex-col sm:items-end sm:justify-center sm:block">
-                    <img src={beach} className='h-[90%] w-[70%] object-cover rounded-tl-[60px] rounded-bl-[60px] relative'></img>
+
+
+                <div className="hidden w-1/2 h-full sm:flex items-end justify-center">
+                    <img src={beach} alt="beach" className='select-none h-[90%] w-[70%] object-cover rounded-tl-[60px] rounded-bl-[60px]' />
+
                 </div>
             </div>
             <div className='w-full h-[300px] bg-[#1BB1AB] flex justify-center items-center'>
@@ -77,6 +135,9 @@ const LoginPage = () => {
             </div>
 
         </div>
-    )
-}
+
+    );
+};
+
 export default LoginPage;
+
