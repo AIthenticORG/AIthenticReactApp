@@ -13,7 +13,7 @@ const ArticleDetailPage = () => {
     // Haal het artikel op via een API-aanroep als het artikel nog niet geladen is
     useEffect(() => {
         if (id && !article) {
-            axios.get(`http://localhost:3306/api/articles/${id}`)
+            axios.get(`http://localhost:3000/api/articles/${id}`)
                 .then(response => {
                     setArticle(response.data[0]); // Zet het opgehaalde artikel in de state
                 })
