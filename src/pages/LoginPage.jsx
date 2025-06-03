@@ -1,7 +1,6 @@
-
 import beach from '../assets/beach.png';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginPage = () => {
@@ -9,8 +8,8 @@ const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const role = 0; // vaste rol
-
+    const roll = 0;
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,17 +19,22 @@ const LoginPage = () => {
                     username,
                     email,
                     password,
-                    role
+                    roll
                 });
                 alert('Registratie gelukt!');
                 setIsRegistering(false);
             } else {
                 const res = await axios.post('http://localhost:3000/api/auth/login', {
-                    username,
+                    email,
                     password
                 });
+
+                // ✅ Sla gebruiker op in localStorage
+                localStorage.setItem('user', JSON.stringify(res.data.user || { email }));
+
                 alert('Login gelukt!');
                 console.log('Token:', res.data.token);
+                navigate('../');
             }
         } catch (err) {
             alert('Fout: ' + (err.response?.data?.error || err.message));
@@ -41,7 +45,6 @@ const LoginPage = () => {
         <div className="w-full h-auto top-[50px] lg:top-[80px] relative flex flex-col items-center justify-center">
             <div className="w-full h-[600px] lg:h-[800px] flex flex-row">
                 <div className="w-full sm:w-1/2 h-full flex flex-col justify-center items-center lg:pb-[100px]">
-
                     <div className='flex flex-col w-[80vw] shadow-md p-[40px] sm:w-auto h-auto sm:ml-[20px] lg:ml-[40px] rounded-[20px]'>
                         <h1 className='font-bold text-[42px]'>
                             {isRegistering ? 'Create an account' : 'Welcome back!'}
@@ -52,31 +55,6 @@ const LoginPage = () => {
 
                         <form className='w-full gap-[30px] flex flex-col mt-[30px]' onSubmit={handleSubmit}>
                             {isRegistering && (
-                                <>
-                                    <label>
-                                        <p>Username</p>
-                                        <input
-                                            className='border border-black pl-2 rounded w-full h-[35px]'
-                                            type="text"
-                                            value={username}
-                                            onChange={(e) => setUsername(e.target.value)}
-                                            required
-                                        />
-                                    </label>
-                                    <label>
-                                        <p>Email address</p>
-                                        <input
-                                            className='border border-black pl-2 rounded w-full h-[35px]'
-                                            type="email"
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                            required
-                                        />
-                                    </label>
-                                </>
-                            )}
-
-                            {!isRegistering && (
                                 <label>
                                     <p>Username</p>
                                     <input
@@ -89,11 +67,20 @@ const LoginPage = () => {
                                 </label>
                             )}
 
+                            <label>
+                                <p>Email address</p>
+                                <input
+                                    className='border border-black pl-2 rounded w-full h-[35px]'
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                />
+                            </label>
 
                             <label>
                                 <p>Password</p>
                                 <input
-
                                     className='border border-black pl-2 rounded w-full h-[35px]'
                                     type="password"
                                     value={password}
@@ -107,7 +94,6 @@ const LoginPage = () => {
                                 className='w-full h-[40px] bg-[#0D5B58] text-white rounded hover:cursor-pointer'
                             >
                                 {isRegistering ? 'Register' : 'Login'}
-
                             </button>
 
                             <p className='text-center mt-4'>
@@ -124,20 +110,12 @@ const LoginPage = () => {
                     </div>
                 </div>
 
-
                 <div className="hidden w-1/2 h-full sm:flex items-end justify-center">
                     <img src={beach} alt="beach" className='select-none h-[90%] w-[70%] object-cover rounded-tl-[60px] rounded-bl-[60px]' />
-
                 </div>
             </div>
-            <div className='w-full h-[300px] bg-[#1BB1AB] flex justify-center items-center'>
-
-            </div>
-
         </div>
-
     );
 };
 
 export default LoginPage;
-
