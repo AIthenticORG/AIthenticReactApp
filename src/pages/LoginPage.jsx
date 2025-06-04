@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+axios.defaults.withCredentials = true;
+
 const LoginPage = () => {
     const [isRegistering, setIsRegistering] = useState(false);
     const [username, setUsername] = useState('');
@@ -15,29 +17,30 @@ const LoginPage = () => {
         e.preventDefault();
         try {
             if (isRegistering) {
-                const res = await axios.post('http://localhost:3000/api/auth/register', {
+                await axios.post('http://localhost:3000/api/auth/register', {
                     username,
                     email,
                     password,
                     roll
                 });
-                alert('Registratie gelukt!');
+
                 setIsRegistering(false);
+                navigate('../');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.location.reload();
+                
             } else {
-                const res = await axios.post('http://localhost:3000/api/auth/login', {
+                await axios.post('http://localhost:3000/api/auth/login', {
                     email,
                     password
                 });
 
-                // ✅ Sla gebruiker op in localStorage
-                localStorage.setItem('user', JSON.stringify(res.data.user || { email }));
-
-                alert('Login gelukt!');
-                console.log('Token:', res.data.token);
                 navigate('../');
+                window.location.reload(); // zorgt dat Header loginstatus toont
             }
         } catch (err) {
-            alert('Fout: ' + (err.response?.data?.error || err.message));
+            console.error('Login/Registratie fout:', err);
+            // Optioneel: foutmelding tonen in UI
         }
     };
 

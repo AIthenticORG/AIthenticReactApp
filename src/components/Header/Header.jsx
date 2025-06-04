@@ -7,22 +7,46 @@ import HeaderMobileMenu from './HeaderMobileMenu';
 import { useTranslation } from 'react-i18next';
 import ENG from '../../assets/English_language.svg.png';
 import NL from '../../assets/Flag_of_the_Netherlands.svg.webp';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
 
 const Header = () => {
     const { t, i18n } = useTranslation();
     const [activateMobileMenu, setActivateMobileMenu] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [username, setUsername] = useState('');
+
+    const checkLogin = async () => {
+        try {
+            const res = await axios.get('http://localhost:3000/api/auth/me');
+            if (res.data.user) {
+                setIsLoggedIn(true);
+                setUsername(res.data.user.username);
+            } else {
+                setIsLoggedIn(false);
+                setUsername('');
+            }
+        } catch (err) {
+            setIsLoggedIn(false);
+            setUsername('');
+        }
+    };
 
     useEffect(() => {
-        const user = localStorage.getItem('user');
-        setIsLoggedIn(!!user);
+        checkLogin();
     }, []);
 
-    const handleLogout = () => {
-        localStorage.removeItem('user');
-        setIsLoggedIn(false);
-        window.location.href = '/';
+    const handleLogout = async () => {
+        try {
+            await axios.post('http://localhost:3000/api/auth/logout');
+            setIsLoggedIn(false);
+            setUsername('');
+            window.location.href = '/';
+        } catch (err) {
+            console.error('Fout bij uitloggen:', err);
+        }
     };
 
     const handleMouseEnter = () => setIsVisible(true);
@@ -102,12 +126,13 @@ const Header = () => {
                     </button>
                 </div>
 
-                <div className='w-auto h-auto xl:flex flex-row gap-[40px] hidden xl:mr-[30px]'>
+                <div className='w-auto h-auto xl:flex flex-row gap-[40px] hidden xl:mr-[30px] items-center'>
                     {isLoggedIn ? (
                         <>
-                            <Link to='/profile'>
+                            <span className="text-white">Welkom, {username}!</span>
+                            <Link to='/contact'>
                                 <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-[100px] w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out">
-                                    {t('Profile')}
+                                    {t('Contact')}
                                 </button>
                             </Link>
                             <button
@@ -119,7 +144,7 @@ const Header = () => {
                         </>
                     ) : (
                         <>
-                            <Link>
+                            <Link to='/contact'>
                                 <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-[100px] w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out">
                                     {t('Contact')}
                                 </button>
@@ -138,12 +163,11 @@ const Header = () => {
                 <button onClick={() => setActivateMobileMenu(!activateMobileMenu)}>
                     {!activateMobileMenu
                         ? <FontAwesomeIcon icon={faBars} className='text-white text-3xl transition-transform duration-300 ease-in-out transform hover:rotate-45' />
-                        : <FontAwesomeIcon icon={faX} className='text-white text-3xl transition-transform duration-250 ease-in-out transform rotate-180' />
+                        : <FontAwesomeIcon icon={faX} className='text-white text3xl transition-transform duration-250 ease-in-out transform rotate-180' />
+                        
                     }
                 </button>
             </div>
-
-            <HeaderMobileMenu activateMobileMenu={activateMobileMenu} />
         </header>
     );
 };
