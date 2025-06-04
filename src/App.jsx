@@ -17,7 +17,7 @@ import WhyPage from './pages/WhyPage';
 import HowPage from './pages/HowPage';
 import WhatPage from './pages/WhatPage';
 import TermsPage from './pages/TermsPage';
-import EnquetePage from './pages/EnquetePage';
+
 
 // Importeren van componenten die de header, footer en top-knop beheren
 import Header from './components/Header/Header';
@@ -72,8 +72,6 @@ function App() {
         {/* Route voor de Cookies-pagina */}
         <Route path="/cookies" element={<CookiesPage/>}/>
 
-        {/* Route voor de Cookies-pagina */}
-        <Route path="/enquete" element={<EnquetePage/>}/>
         
         {/* Dynamische route voor artikelpagina's met ID en titel als parameters */}
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
