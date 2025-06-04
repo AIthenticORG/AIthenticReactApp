@@ -129,7 +129,7 @@ const Header = () => {
                 <div className='w-auto h-auto xl:flex flex-row gap-[40px] hidden xl:mr-[30px] items-center'>
                     {isLoggedIn ? (
                         <>
-                            <span className="text-white">Welkom, {username}!</span>
+                            <span className="text-white">Welkom, {username}</span>
                             <Link to='/contact'>
                                 <button className="bg-[#0D5B58] text-white px-6 py-2 rounded-[100px] w-[auto] h-[40px] border-1 hover:cursor-pointer hover:bg-white border-1 hover:text-[#0D5B58] transition-all duration-300 ease-in-out">
                                     {t('Contact')}

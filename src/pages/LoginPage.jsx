@@ -1,6 +1,6 @@
 import beach from '../assets/beach.png';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 axios.defaults.withCredentials = true;
@@ -10,6 +10,7 @@ const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const roll = 0;
     const navigate = useNavigate();
 
@@ -28,7 +29,6 @@ const LoginPage = () => {
                 navigate('../');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 window.location.reload();
-                
             } else {
                 await axios.post('http://localhost:3000/api/auth/login', {
                     email,
@@ -36,11 +36,17 @@ const LoginPage = () => {
                 });
 
                 navigate('../');
-                window.location.reload(); // zorgt dat Header loginstatus toont
+                window.location.reload();
             }
         } catch (err) {
             console.error('Login/Registratie fout:', err);
-            // Optioneel: foutmelding tonen in UI
+            if (err.response && err.response.status === 401) {
+                setErrorMessage('Email of wachtwoord is onjuist.');
+            } else if (err.response && err.response.data && err.response.data.message) {
+                setErrorMessage(err.response.data.message);
+            } else {
+                setErrorMessage('Er is iets misgegaan. Probeer het opnieuw.');
+            }
         }
     };
 
@@ -99,12 +105,19 @@ const LoginPage = () => {
                                 {isRegistering ? 'Register' : 'Login'}
                             </button>
 
+                            {errorMessage && (
+                                <p className="text-red-600 text-sm text-center mt-2">{errorMessage}</p>
+                            )}
+
                             <p className='text-center mt-4'>
                                 {isRegistering ? 'Already have an account?' : "Don't have an account?"}{' '}
                                 <button
                                     type="button"
                                     className='text-[#0D5B58] underline'
-                                    onClick={() => setIsRegistering(!isRegistering)}
+                                    onClick={() => {
+                                        setIsRegistering(!isRegistering);
+                                        setErrorMessage('');
+                                    }}
                                 >
                                     {isRegistering ? 'Login here' : 'Register here'}
                                 </button>
