@@ -19,7 +19,7 @@ const ImageSliderItems = ({images, from, to}) => {
                     return (
                         <img
                             draggable="false"
-                            className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out object-fit"
+                            className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out object-contain"
                             src={image}
                             key={index}
                         />
@@ -38,7 +38,7 @@ const ImageSliderItems = ({images, from, to}) => {
                     return (
                         <img
                             draggable="false"
-                            className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out object-fit"
+                            className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out object-contain"
                             src={image}
                             key={index}
                         />
@@ -57,7 +57,7 @@ const ImageSliderItems = ({images, from, to}) => {
                     return (
                         <img
                             draggable="false"
-                            className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out object-fit"
+                            className="select-none h-[150px] w-[200px] hover:scale-[1.05] transition-all duration-300 ease-in-out object-contain"
                             src={image}
                             key={index}
                         />
