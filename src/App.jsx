@@ -17,17 +17,22 @@ import WhyPage from './pages/WhyPage';
 import HowPage from './pages/HowPage';
 import WhatPage from './pages/WhatPage';
 import TermsPage from './pages/TermsPage';
+import BuildArticle from './pages/BuildArticle';
 
 // Importeren van componenten die de header, footer en top-knop beheren
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
 import TopButton from './components/TopButton';
+import ScrollToTop from './components/ScrollToTop';
 
 // Importeren van de algemene styling
 import './App.css';
+import {Toaster} from 'react-hot-toast';
 import CookiesPage from './pages/CookiesPage';
+import EditArticle from './pages/EditArticle';
 
 function App() {
+  ScrollToTop(); // Zorgt ervoor dat de pagina naar boven scrolt bij het laden
   return (
     <>
       {/* De Header component wordt bovenaan de pagina weergegeven */}
@@ -76,7 +81,19 @@ function App() {
         
         {/* Fallback route voor niet-bestaande pagina's, toont een foutmelding */}
         <Route path="*" element={<h1>Not Found</h1>} />
+
+        {/* Route voor de CreateArticle pagina */}
+        <Route path="/build-article" element={<BuildArticle/>} />
+
+        {/* Route voor de EditArticle pagina */}
+        <Route path="/edit-article/:id/:title" element={<EditArticle/>} />
       </Routes>
+      <Toaster position='top-center'
+      toastOptions={{
+        duration:4000,
+      }}
+      
+      />
 
       {/* De Footer component wordt onderaan de pagina weergegeven */}
       <Footer/>
