@@ -88,6 +88,7 @@ const Header = () => {
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/startlearning'>{t('Start learning')}</Link>
                     </li>
+                    
                 </ul>
             </nav>
 
