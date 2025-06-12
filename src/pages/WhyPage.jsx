@@ -3,7 +3,7 @@ import waarom2 from '../assets/waarom2.png';
 
 const WhyPage = () => {
   return (
-    <div className="w-full min-h-[auto] flex flex-col items-center pt-20 md:pt-28">
+    <div className="md:w-[1500px] min-h-[100vh] flex flex-col items-center pt-20 md:pt-28">
         {/* Hoofdingangspunt van de pagina */}
         <div className="w-[80%] max-w-7xl flex flex-col gap-16">
             {/* Container voor de eerste sectie, met flexbox om de items te positioneren */}

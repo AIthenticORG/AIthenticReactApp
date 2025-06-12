@@ -1,9 +1,8 @@
-import React from 'react';
 import searching from '../assets/searching.png'; // Afbeelding die gebruikt wordt in de pagina
 
 const WhatPage = () => {
     return (
-        <div className='w-full min-h-[100vh] top-[50px] lg:top-[80px] relative flex flex-col items-center'> 
+        <div className='md:w-[1500px] min-h-[100vh] top-[50px] lg:top-[80px] relative flex flex-col items-center'> 
             {/* Hoofdcontainer die de volledige pagina bevat */}
             <div className="w-[90%] max-w-7xl flex flex-col gap-16 mt-20">
                 {/* Binnen deze div wordt de inhoud gepositioneerd met marges en ruimte tussen elementen */}

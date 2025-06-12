@@ -45,7 +45,7 @@ const resources = {
             "FAQ": "FAQ",
             "header.purpose": "Het AI Bedrijf",
             "homepage.heroTitle": "Authentiek blijven in het tijdperk van AI",
-            "homepage.heroSubtitle": "Behoudt je uniciteit en maak AI concreet voor jouw organisatie.",
+            "homepage.heroSubtitle": "Behoud je uniciteit en maak AI concreet voor jouw organisatie.",
             "Start learning": "Educatie",
             "Get Connected": "Kom in contact",
             "Support": "Ondersteuning",

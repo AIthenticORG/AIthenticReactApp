@@ -126,7 +126,7 @@ const LoginPage = () => {
                     </div>
                 </div>
 
-                <div className="hidden w-1/2 h-full sm:flex items-end justify-center">
+                <div className="hidden w-1/2 h-full sm:flex items-center justify-end">
                     <img src={beach} alt="beach" className='select-none h-[90%] w-[70%] object-cover rounded-tl-[60px] rounded-bl-[60px]' />
                 </div>
             </div>

@@ -4,7 +4,7 @@ import hoe3 from '../assets/hoe3.png'; // Afbeelding voor de derde sectie (niet 
 
 const HowPage = () => {
     return(
-        <div className="w-full flex flex-col items-center pt-20 md:pt-28">
+        <div className="md:w-[1500px] flex flex-col items-center pt-20 md:pt-28">
             <div className="w-[80%] max-w-7xl flex flex-col gap-16">
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="w-full lg:w-1/2 flex flex-col gap-6">
