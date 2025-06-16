@@ -1,4 +1,3 @@
-import React from 'react';
 // Importeer het component dat de partnernamen animerend weergeeft
 import PartnerListItems from './PartnerListItems';
 

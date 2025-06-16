@@ -18,6 +18,7 @@ import HowPage from './pages/HowPage';
 import WhatPage from './pages/WhatPage';
 import TermsPage from './pages/TermsPage';
 import BuildArticle from './pages/BuildArticle';
+import PageNotFound from './pages/PageNotFound';
 
 // Importeren van componenten die de header, footer en top-knop beheren
 import Header from './components/Header/Header';
@@ -80,7 +81,7 @@ function App() {
         <Route path="/article/:id/:title" element={<ArticleDetailPage/>} />
         
         {/* Fallback route voor niet-bestaande pagina's, toont een foutmelding */}
-        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="*" element={<PageNotFound/>} />
 
         {/* Route voor de CreateArticle pagina */}
         <Route path="/build-article" element={<BuildArticle/>} />
@@ -92,7 +93,6 @@ function App() {
       toastOptions={{
         duration:4000,
       }}
-      
       />
 
       {/* De Footer component wordt onderaan de pagina weergegeven */}
