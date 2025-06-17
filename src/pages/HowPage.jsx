@@ -1,6 +1,6 @@
-import hoe from '../assets/hoe.png'; // Afbeelding voor de "Hoe?" sectie
-import hoe2 from '../assets/hoe2.png'; // Afbeelding voor de tweede sectie
-import hoe3 from '../assets/hoe3.png'; // Afbeelding voor de derde sectie (niet gebruikt in de code)
+import hoe from '../assets/hoe.png'; 
+import hoe2 from '../assets/hoe2.png';
+import hoe3 from '../assets/hoe3.png'; 
 
 const HowPage = () => {
     return(
