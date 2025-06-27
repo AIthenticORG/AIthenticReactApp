@@ -19,6 +19,7 @@ import WhatPage from './pages/WhatPage';
 import TermsPage from './pages/TermsPage';
 import BuildArticle from './pages/BuildArticle';
 import PageNotFound from './pages/PageNotFound';
+import VragenlijstPage from './pages/VragenlijstPage';
 
 
 // Importeren van componenten die de header, footer en top-knop beheren
@@ -77,6 +78,8 @@ function App() {
 
         {/* Route voor de Cookies-pagina */}
         <Route path="/cookies" element={<CookiesPage/>}/>
+
+        <Route path="/vragenlijst" element={<VragenlijstPage/>}/>
 
         
         {/* Dynamische route voor artikelpagina's met ID en titel als parameters */}
