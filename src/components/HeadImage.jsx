@@ -24,12 +24,9 @@ const HeadImage = () => {
                     <h2 className="text-[20px] sm:text-[30px] md:text-[40px] mt-2 leading-tight text-left">
                         <span className="text-white">{t('homepage.heroSubtitle')}</span>
                     </h2>
+                    <h2 className="text-[20px] sm:text-[30px] md:text-[50px] mt-2 leading-tight text-left font-bold italic">Onze purpose: Vertrouwd met AI</h2>
                     {/* Start learning knop */}
-                    <Link to="/startlearning">
-                        <button className="mt-6 px-6 py-3 text-[14px] sm:text-[16px] md:text-[18px] border border-white text-white rounded-full hover:bg-white hover:text-black transition duration-400">
-                            {t('Start learning')}
-                        </button>
-                    </Link>
+                    
                 </div>
             </div>
         </div>

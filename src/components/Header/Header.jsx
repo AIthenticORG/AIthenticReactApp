@@ -110,9 +110,11 @@ const Header = () => {
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/startlearning'>{t('Start learning')}</Link>
                     </li>
+
                     <li className="hover:scale-120 hover:text-green-500 transition duration-400 ease-in-out">
                         <Link to='/enquete'>{t('Enquete')}</Link>
                     </li>
+
                 </ul>
             </nav>
 
@@ -167,10 +169,10 @@ const Header = () => {
                     {!activateMobileMenu
                         ? <FontAwesomeIcon icon={faBars} className='text-white text-3xl transition-transform duration-300 ease-in-out transform hover:rotate-45' />
                         : <FontAwesomeIcon icon={faX} className='text-white text3xl transition-transform duration-250 ease-in-out transform rotate-180' />
-                        
                     }
                 </button>
             </div>
+            <HeaderMobileMenu activateMobileMenu={activateMobileMenu} />
         </header>
     );
 };
